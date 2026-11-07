@@ -12,7 +12,7 @@
 - [분석 노트북](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/analysis_run002.ipynb): 저장한 run002 결과를 CPU에서 분석한다. 모델 가중치와 GPU는 필요하지 않다.
 - [정식 결과 요약](results/run002/run_summary.json), [용량 보고서](results/run002/size_report.json), [파일 manifest](results/run002_release/artifact_manifest.json)
 
-프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP은 GitHub 릴리스에 직접 업로드 중이며, 업로드가 끝난 뒤 분석 노트북에서 공개 결과를 받을 수 있다.
+프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP의 GitHub 업로드는 중단했다. 원시는 현재 수집 Colab 런타임에 보존되어 있으며 같은 노트북에서 분석을 이어간다. 장기 보관은 사용자의 Drive로 옮길 계획이며, Drive 복사·검증은 아직 완료하지 않았다. 분석 노트북의 기본 경로는 Drive다.
 
 ## 실행 조건
 
@@ -78,3 +78,7 @@ Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 Z
 ## 실행 기록
 
 [초기 저장 용량 확인 결과](results/README.md)는 sampling 기본값 상속 오류가 확인되어 greedy baseline에서 제외한다. 프로토콜 1.1의 재수집은 results/run002를 사용한다. 노트북은 subprocess 출력을 화면과 collection.log에 함께 기록해 실제 실패 원인을 보존한다.
+
+## 현재 수집 세션에서 바로 분석
+
+[inspect_run002.py](inspect_run002.py)는 이미 존재하는 run002의 case_03_swirl과 case_07_swirl tensor를 CPU에서 읽는다. 모델 추론을 다시 실행하지 않고 층별 norm·cosine, 이미지 attention mass·조건부 공간 entropy, 기대/출력/직전 색 오브젝트 attention과 head별 비교를 기록한다. 출력은 results/run002_exploration에 저장하며 원시 수집 폴더는 수정하지 않는다.

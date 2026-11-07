@@ -1,7 +1,9 @@
 """CPU analysis of exp001 captures; no model weights or GPU are loaded.
 
-Release metadata is downloaded first. Raw tensors are opt-in, one case archive
-at a time. Every archive and loaded tensor is verified against its saved SHA256.
+Mounted Google Drive artifacts are copied to local CPU runtime storage first.
+Raw tensors are opt-in, one case archive at a time. Every archive and loaded
+tensor is verified against its saved SHA256. ReleaseBundle remains optional for
+an explicitly published GitHub Release; the notebook defaults to DriveBundle.
 """
 
 from __future__ import annotations
@@ -19,6 +21,8 @@ import zipfile
 REPOSITORY = "seungjoolee24/mllm-line-tracing"
 DEFAULT_RELEASE = "exp001-greedy-run002"
 PROTOCOL = "qwen3vl_trace_case_zip_v1"
+DEFAULT_DRIVE_ARTIFACT_DIR = "/content/drive/MyDrive/mllm-line-tracing/experiments/exp001_qwen3vl4b_trace10/run002_artifacts"
+RUN002_MANIFEST_SHA256 = "7d86f02d1d52ab50a40a1abe0028334e1773f5a4b854bb645efe7f7ddca35e5e"
 
 
 def read_json(path):
@@ -59,6 +63,31 @@ def _download(url, destination, digest, expected_bytes=None):
             raise ValueError(f"download size mismatch: {destination.name}")
         if sha256_file(temporary) != digest:
             raise ValueError(f"download SHA256 mismatch: {destination.name}")
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return destination
+
+
+def _copy_verified(source, destination, digest, expected_bytes=None):
+    """Stream one mounted-Drive artifact into the local cache and verify it."""
+    source, destination = Path(source), Path(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists() and sha256_file(destination) == digest:
+        if expected_bytes is None or destination.stat().st_size == expected_bytes:
+            return destination
+    if not source.is_file():
+        raise FileNotFoundError(f"artifact is missing; mount Drive and check the folder: {source}")
+    if expected_bytes is not None and source.stat().st_size != expected_bytes:
+        raise ValueError(f"Drive artifact size mismatch: {source.name}")
+    temporary = destination.with_name(destination.name + ".part")
+    try:
+        with source.open("rb") as stream, temporary.open("wb") as out:
+            shutil.copyfileobj(stream, out, length=1024 * 1024)
+        if expected_bytes is not None and temporary.stat().st_size != expected_bytes:
+            raise ValueError(f"copied artifact size mismatch: {source.name}")
+        if sha256_file(temporary) != digest:
+            raise ValueError(f"copied artifact SHA256 mismatch: {source.name}")
         temporary.replace(destination)
     finally:
         temporary.unlink(missing_ok=True)
@@ -166,6 +195,64 @@ class ReleaseBundle:
         return [{"file": row["file"], "kind": row["kind"], "sample_id": row.get("sample_id"),
                  "MiB": row["bytes"] / 1024**2, "sha256": row["sha256"]}
                 for row in self.manifest["archives"]]
+
+
+class LocalBundle:
+    """Metadata-first reader for mounted Drive or a local artifact directory.
+
+    Only .metadata() and the explicitly selected .case(sample_id) copy ZIPs.
+    Extraction and tensor analysis run in local runtime storage, not in Drive.
+    """
+
+    def __init__(self, artifact_dir, cache, expected_manifest_sha256=RUN002_MANIFEST_SHA256):
+        if not expected_manifest_sha256 or len(expected_manifest_sha256) != 64:
+            raise ValueError("a pinned manifest SHA256 is required")
+        self.artifact_dir = Path(artifact_dir).resolve()
+        self.cache = Path(cache).resolve() / ("run002-" + expected_manifest_sha256[:12])
+        self.cache.mkdir(parents=True, exist_ok=True)
+        self.manifest_path = _copy_verified(
+            self.artifact_dir / "artifact_manifest.json", self.cache / "artifact_manifest.json",
+            expected_manifest_sha256,
+        )
+        self.manifest = read_json(self.manifest_path)
+        if self.manifest.get("package_protocol") != PROTOCOL:
+            raise ValueError("unsupported artifact package protocol")
+        if self.manifest.get("collection_schema_version") != "1.1":
+            raise ValueError("artifacts must contain protocol 1.1 greedy captures")
+        if self.manifest.get("status") != "complete" or self.manifest.get("run_name") != "run002":
+            raise ValueError("artifacts must contain the complete run002 capture")
+        self.run_name = self.manifest["run_name"]
+        self.run_dir = self.cache / self.run_name
+        self.manifest_sha256 = expected_manifest_sha256
+
+    def _restore(self, entry):
+        source = _inside(self.artifact_dir, entry["file"])
+        archive = _copy_verified(source, _inside(self.cache, entry["file"]),
+                                 entry["sha256"], entry["bytes"])
+        _extract_verified_archive(archive, self.cache, entry["archive_path_prefix"])
+        return self.run_dir
+
+    def metadata(self):
+        entries = [entry for entry in self.manifest["archives"] if entry["kind"] == "metadata"]
+        if len(entries) != 1:
+            raise ValueError("artifacts must contain exactly one metadata archive")
+        return self._restore(entries[0])
+
+    def case(self, sample_id="case_03_swirl"):
+        entries = [entry for entry in self.manifest["archives"]
+                   if entry["kind"] == "case" and entry["sample_id"] == sample_id]
+        if len(entries) != 1:
+            raise ValueError(f"case archive is missing or ambiguous: {sample_id}")
+        self._restore(entries[0])
+        return self.run_dir / "samples" / sample_id
+
+    def inventory(self):
+        return [{"file": row["file"], "kind": row["kind"], "sample_id": row.get("sample_id"),
+                 "MiB": row["bytes"] / 1024**2, "sha256": row["sha256"]}
+                for row in self.manifest["archives"]]
+
+
+DriveBundle = LocalBundle
 
 
 def _validate_metadata(meta, allow_legacy=False):
