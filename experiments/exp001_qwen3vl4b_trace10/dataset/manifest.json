@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "count": 10,
+  "family_counts": {
+    "curve": 3,
+    "straight": 2,
+    "elbow": 3,
+    "swirl": 2
+  },
+  "annotations": "annotations.jsonl",
+  "recipes": [
+    {
+      "family": "curve",
+      "num_objects": 6,
+      "path_length": 480,
+      "object_spacing": 70,
+      "rotation_degrees": 20,
+      "reverse": false
+    },
+    {
+      "family": "straight",
+      "num_objects": 4,
+      "path_length": 400,
+      "object_spacing": 100,
+      "rotation_degrees": 105,
+      "reverse": true
+    },
+    {
+      "family": "elbow",
+      "num_objects": 8,
+      "path_length": 480,
+      "object_spacing": 56,
+      "rotation_degrees": 25,
+      "reverse": false
+    },
+    {
+      "family": "swirl",
+      "num_objects": 8,
+      "path_length": 480,
+      "object_spacing": 56,
+      "position_jitter": 4,
+      "rotation_degrees": 80,
+      "reverse": true
+    },
+    {
+      "family": "curve",
+      "num_objects": 8,
+      "path_length": 480,
+      "object_spacing": 56,
+      "position_jitter": 8,
+      "rotation_degrees": 210,
+      "reverse": false
+    },
+    {
+      "family": "straight",
+      "num_objects": 8,
+      "path_length": 480,
+      "object_spacing": 56,
+      "position_jitter": 6,
+      "rotation_degrees": 150,
+      "reverse": true
+    },
+    {
+      "family": "elbow",
+      "num_objects": 6,
+      "path_length": 440,
+      "object_spacing": 64,
+      "position_jitter": 4,
+      "rotation_degrees": 270,
+      "reverse": false
+    },
+    {
+      "family": "swirl",
+      "num_objects": 6,
+      "path_length": 480,
+      "object_spacing": 70,
+      "swirl_turns": 1.0,
+      "rotation_degrees": 160,
+      "reverse": false
+    },
+    {
+      "family": "curve",
+      "num_objects": 4,
+      "path_length": 400,
+      "object_spacing": 96,
+      "position_jitter": 6,
+      "rotation_degrees": 300,
+      "reverse": true
+    },
+    {
+      "family": "elbow",
+      "num_objects": 8,
+      "path_length": 520,
+      "object_spacing": 56,
+      "position_jitter": 5,
+      "rotation_degrees": 120,
+      "reverse": true
+    }
+  ],
+  "purpose": "Frozen pilot pool; execute first case only before reviewing tensor size."
+}

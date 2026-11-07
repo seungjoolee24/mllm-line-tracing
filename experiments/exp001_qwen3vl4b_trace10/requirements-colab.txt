@@ -1,0 +1,5 @@
+transformers==4.57.1
+accelerate==1.11.0
+Pillow==11.3.0
+safetensors==0.6.2
+sentencepiece==0.2.1

@@ -89,3 +89,9 @@ easy_v0/
 [Codex Pages 설계](https://chatgpt.com/space/page_2601957ef5a88191a659fc67d27759e4)에서 기획을 관리하고 구현을 이 저장소에 반영합니다. Page는 계정별 접근 권한이 적용됩니다.
 
 [VLMs Trace Without Tracking](https://arxiv.org/html/2605.15672v2)의 Circuit Connections·Swirl을 참고한 단일선 기초 조건입니다. 선 두께·원 크기·경로 형태는 자체 명세이며, 원 논문의 정확한 재현으로 표기하지 않습니다.
+
+## 활성값 수집 실험
+
+[Qwen3 VL 4B T4 실험](experiments/exp001_qwen3vl4b_trace10)은 고정한 10문제 중 첫 1문제만 실행해 이미지·질문·생성 토큰의 전 층 표현과 attention을 수집합니다. 실제 용량과 VRAM을 확인한 뒤 같은 노트북에서 나머지를 재개합니다.
+
+[활성값 수집 노트북을 Colab에서 열기](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/activation_pilot.ipynb)
