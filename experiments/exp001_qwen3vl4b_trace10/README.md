@@ -12,7 +12,7 @@
 - [분석 노트북](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/analysis_run002.ipynb): 저장한 run002 결과를 CPU에서 분석한다. 모델 가중치와 GPU는 필요하지 않다.
 - [정식 결과 요약](results/run002/run_summary.json), [용량 보고서](results/run002/size_report.json), [파일 manifest](results/run002_release/artifact_manifest.json)
 
-프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP의 GitHub 업로드는 중단했다. 현재 수집 노트북의 마지막 백업 셀에서 전체 결과를 사용자의 Google Drive에 저장했다. 문제별 ZIP 10개와 메타데이터 ZIP 1개, manifest 1개를 복사한 뒤 마운트된 Drive 파일을 모두 다시 읽어 크기와 SHA-256 일치를 확인했다. ZIP 합계는 3,706,256,058 bytes(3.452 GiB)이며 원래 .pt와 메타데이터를 보존한다. 분석 노트북의 기본 경로도 이 Drive 폴더다. 이후 실행은 사용자가 셀별로 직접 진행한다.
+프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 당시 원시 tensor 2,060개는 4,253,107,416 bytes였다. 원시 ZIP의 GitHub 업로드는 중단했다. Drive 백업 셀의 마운트 경로 복사·해시 검증은 통과했으나 서버 업로드 완료를 확인하지 못했다. 후속 Drive 서버 조회에서는 metadata ZIP과 case00~04 ZIP만 확인됐고 manifest와 case05~09 ZIP은 확인되지 않았다. 수집 런타임은 종료되었다. 현재 분석은 사용자가 선택한 case00~04 다섯 문제로 진행하며, 작은 원본 manifest는 GitHub에서 검증 후 복구한다. 모든 수집 메타데이터는 이 저장소에 남아 있다. 이후 노트북은 사용자가 셀별로 직접 실행하며, 마지막에 Drive 업로드 flush와 재연결 검증을 수행한다.
 
 ## 실행 조건
 
@@ -86,9 +86,9 @@ Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 Z
 ## run002 Drive 보관
 
 - 저장 경로: `MyDrive/mllm-line-tracing/experiments/exp001_qwen3vl4b_trace10/run002_artifacts/`
-- 완료 확인서: 같은 폴더의 `drive_backup_receipt.json`. 12개 파일의 크기와 SHA-256을 기록한다.
-- [현재 실행 노트북의 백업 셀](https://colab.research.google.com/drive/1SSCEgcNhHj0i3SgudJ_iMlPWyFLdiaRH#scrollTo=z66XUlmnXfel)은 `DRIVE BACKUP COMPLETE`로 완료했다.
+- 당시 백업 셀은 마운트 경로에서 `DRIVE BACKUP COMPLETE`를 표시했으나, 완료 확인서와 manifest의 서버 반영은 후속 조회에서 확인되지 않았다. 서버 업로드가 끝난 백업으로 취급하지 않는다.
+- [당시 실행 노트북의 백업 셀](https://colab.research.google.com/drive/1SSCEgcNhHj0i3SgudJ_iMlPWyFLdiaRH#scrollTo=z66XUlmnXfel)은 실행 기록으로 보존한다.
 - [실행한 백업 코드](backup_run002_to_drive.py)는 이미 내보낸 `/content/run002_release`를 사용하는 이 세션용 셀이다. 원본은 삭제하지 않는다.
-- 복원할 때는 manifest를 검증하고 11개 ZIP을 같은 상위 디렉터리에 풀면 `run002/`가 복구된다. [분석 노트북](analysis_run002.ipynb)은 필요한 문제만 Drive에서 로컬 작업 폴더로 복원할 수 있다.
+- 현재 실행에는 [case00~04 전용 분석 노트북](../exp002_patch_analysis/patch_analysis_cases00_04.ipynb)을 사용한다. metadata ZIP과 다섯 case ZIP의 존재·크기·해시를 확인해 선택한 문제만 복원한다.
 
-이 검증은 Colab의 마운트된 Drive 파일을 다시 읽은 결과다. 현재 런타임은 연결을 유지하며, 백업 뒤 추가 분석 셀을 자동 실행하지 않았다.
+마운트 경로에서 다시 읽은 검증과 서버 업로드 완료를 구분한다. 새 분석 노트북은 마지막에 `drive.flush_and_unmount()`와 재연결·결과 재검증을 포함한다.

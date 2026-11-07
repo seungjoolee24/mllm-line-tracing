@@ -20,7 +20,7 @@ MLLM(Multimodal Large Language Model)의 시각적 연속성 인지 능력을 li
 
 ## 현재 분석 작업
 
-[Exp002: patch PCA·단어별 attention·선 연속성](experiments/exp002_patch_analysis)은 run002의 실패 나선·성공 나선·성공 직선 세 사례를 분석합니다. [노트북을 내려받아](https://github.com/seungjoolee24/mllm-line-tracing/raw/refs/heads/main/experiments/exp002_patch_analysis/patch_analysis.ipynb) Colab에서 셀별로 실행하면 결과가 사용자의 Google Drive에 저장됩니다. PCA는400×2560, 연속성 비교는 merge 전1600×1024 표현을 사용합니다.
+[Exp002: patch PCA·단어별 attention·선 연속성](experiments/exp002_patch_analysis)은 Drive에 보관된 run002의 case00~04 다섯 사례(성공4·실패1)를 분석합니다. [현재 노트북을 내려받아](https://github.com/seungjoolee24/mllm-line-tracing/raw/refs/heads/main/experiments/exp002_patch_analysis/patch_analysis_cases00_04.ipynb) Colab에서 셀별로 실행하면 결과가 사용자의 Google Drive에 저장됩니다. PCA는400×2560, 연속성 비교는 merge 전1600×1024 표현을 사용합니다. 누락된 작은 manifest 복구와 마지막 Drive 업로드 flush·재검증을 포함합니다.
 
 ## 단일 경로 생성기 v0
 

@@ -119,7 +119,7 @@ class PipelineTests(unittest.TestCase):
     def test_completion_manifest_reconstructs_all_saved_files(self):
         self.prepare_synthetic_completion()
         result = self.run.finalize()
-        self.assertEqual(result["status"], "complete")
+        self.assertEqual(result["status"], "local_verified")
         manifest = json.loads((self.run.output / "output_manifest.json").read_text())
         self.assertEqual(manifest["file_count"], len(manifest["files"]))
         self.assertEqual(manifest["total_bytes"], sum(x["bytes"] for x in manifest["files"].values()))
@@ -128,6 +128,12 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(path.stat().st_size, record["bytes"])
             self.assertEqual(pipeline.sha256(path), record["sha256"])
         self.assertEqual(json.loads((self.run.output / "environment.json").read_text()), self.run.identity["environment"])
+        self.assertEqual(pipeline.verify_output_bundle(self.run.output)["status"], "verified")
+        summary = json.loads((self.run.output / "summary.json").read_text())
+        self.assertEqual(summary["pca_condition_count"], len(pipeline.CASES) * 2)
+        (self.run.output / "inputs/synthetic.txt").write_text("changed after sync")
+        with self.assertRaisesRegex(ValueError, "verification failed"):
+            pipeline.verify_output_bundle(self.run.output)
 
     def test_incomplete_file_cannot_produce_complete_summary(self):
         self.prepare_synthetic_completion()
@@ -140,7 +146,7 @@ class PipelineTests(unittest.TestCase):
 class NotebookTests(unittest.TestCase):
     def test_cells_are_unexecuted_valid_python_and_bootstrap_hashes_match(self):
         import nbformat
-        notebook_path = Path(__file__).with_name("patch_analysis.ipynb")
+        notebook_path = Path(__file__).with_name("patch_analysis_cases00_04.ipynb")
         notebook = nbformat.read(notebook_path, as_version=4)
         nbformat.validate(notebook)
         source_manifest = None

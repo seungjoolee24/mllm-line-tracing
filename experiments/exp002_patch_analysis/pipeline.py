@@ -1,4 +1,4 @@
-"""User-run CPU analysis of three verified run002 captures.
+"""User-run CPU analysis of the available run002 case00-04 captures.
 
 No model is instantiated. All authoritative outputs are written to the user's
 mounted Drive. Local storage is used only to cache verified input archives.
@@ -14,6 +14,7 @@ from pathlib import Path
 import platform
 import shutil
 import sys
+import tempfile
 import urllib.request
 
 import numpy as np
@@ -23,11 +24,15 @@ import views
 from continuity import analyze_continuity
 
 
-CASES = ("case_03_swirl", "case_07_swirl", "case_05_straight")
+CASES = ("case_00_curve", "case_01_straight", "case_02_elbow", "case_03_swirl", "case_04_curve")
 DATASET_COMMIT = "957385e35c3cc43af96f650771285a70ea72f3e2"
 DATASET_ANNOTATIONS_SHA256 = "24686bc95539b559f73f12d45f58681e7af87d567d3ea8738341cd65f2555e8f"
 CAPTURE_IO_SHA256 = "4aef2c4057e32433522ff8f71121fe4b42434a5ceee15639c5e3acf63f30ffbe"
 MANIFEST_SHA256 = "7d86f02d1d52ab50a40a1abe0028334e1773f5a4b854bb645efe7f7ddca35e5e"
+CANONICAL_MANIFEST_URL = (
+    f"https://raw.githubusercontent.com/seungjoolee24/mllm-line-tracing/{DATASET_COMMIT}/"
+    "experiments/exp001_qwen3vl4b_trace10/results/run002_release/artifact_manifest.json"
+)
 DEFAULT_CONFIG = {
     "cases": list(CASES), "seed": 0, "feature_tap": "merger/final/output",
     "feature_shape": [400, 2560], "decoder_layers": 36,
@@ -125,6 +130,87 @@ def _environment():
     return result
 
 
+def input_preflight(artifact_dir, recover_manifest=False):
+    """Check selected archives; optionally recover only the pinned tiny manifest.
+
+    No raw archive is downloaded or regenerated here. An existing different
+    manifest is never replaced. A recovered manifest is published only after
+    all selected archive names and sizes pass the preflight.
+    """
+    root = Path(artifact_dir).resolve()
+    if not root.is_dir():
+        raise FileNotFoundError(f"Input artifact directory is missing: {root}. Mount Drive and check ARTIFACT_DIR.")
+    manifest = root / "artifact_manifest.json"
+    if manifest.exists() and not manifest.is_file():
+        raise ValueError(f"Manifest is not a regular file: {manifest}")
+    if manifest.is_file():
+        actual = sha256(manifest)
+        if actual != MANIFEST_SHA256:
+            raise ValueError(f"Manifest SHA-256 mismatch: {manifest}\nexpected={MANIFEST_SHA256}\nactual={actual}. Existing file was not changed.")
+    elif not recover_manifest:
+        raise FileNotFoundError(f"Manifest is missing: {manifest}. Run input_preflight(ARTIFACT_DIR, recover_manifest=True) before creating AnalysisRun.")
+    recovered = not manifest.is_file()
+    with tempfile.TemporaryDirectory(prefix="exp002-manifest-") as temporary:
+        source = Path(temporary) / "artifact_manifest.json" if recovered else manifest
+        if recovered:
+            _download(CANONICAL_MANIFEST_URL, source, MANIFEST_SHA256)
+            if sha256(source) != MANIFEST_SHA256:
+                raise ValueError("Recovered manifest SHA-256 mismatch")
+        data = json.loads(source.read_text(encoding="utf-8"))
+        if (data.get("package_protocol") != "qwen3vl_trace_case_zip_v1"
+                or data.get("collection_schema_version") != "1.1"
+                or data.get("run_name") != "run002" or data.get("status") != "complete"
+                or data.get("case_count") != 10 or data.get("tensor_file_count") != 2060):
+            raise ValueError("Manifest protocol/run/status/count differs from the collected run002")
+        archives = data.get("archives", [])
+        names = [entry.get("file") for entry in archives]
+        if len(archives) != 11 or len(set(names)) != len(names):
+            raise ValueError("Manifest archive filenames are missing or duplicate")
+        if any(not isinstance(name, str) or Path(name).name != name for name in names):
+            raise ValueError("Manifest contains an invalid archive filename")
+        metadata = [entry for entry in archives if entry.get("kind") == "metadata"]
+        if len(metadata) != 1:
+            raise ValueError("Manifest must declare exactly one metadata archive")
+        required = list(metadata)
+        for case_id in CASES:
+            matches = [entry for entry in archives if entry.get("kind") == "case" and entry.get("sample_id") == case_id]
+            if len(matches) != 1:
+                raise ValueError(f"Manifest selected case is missing or ambiguous: {case_id}")
+            required.append(matches[0])
+        missing, wrong_size = [], []
+        for entry in required:
+            path = root / entry["file"]
+            if not path.is_file():
+                missing.append(entry["file"])
+            elif path.stat().st_size != entry["bytes"]:
+                wrong_size.append(f"{entry['file']}: expected={entry['bytes']}, actual={path.stat().st_size}")
+        if missing:
+            raise FileNotFoundError(f"Selected input archives are missing in {root}: {', '.join(missing)}. No raw data were downloaded.")
+        if wrong_size:
+            raise ValueError("Input archive size mismatch: " + "; ".join(wrong_size))
+        if recovered:
+            _copy_exact(source, manifest)
+    print(f"INPUT PREFLIGHT READY: {len(CASES)} selected cases + metadata; manifest recovered={recovered}", flush=True)
+    return {"status": "ready", "artifact_dir": str(root), "manifest_sha256": MANIFEST_SHA256,
+            "manifest_recovered": recovered, "selected_cases": list(CASES),
+            "required_archives": required}
+
+
+def verify_output_bundle(output_dir):
+    """Re-read all declared files, including after Drive sync/unmount/remount."""
+    root = Path(output_dir).resolve()
+    manifest = json.loads((root / "output_manifest.json").read_text())
+    if manifest.get("status") != "complete" or manifest.get("file_count") != len(manifest["files"]):
+        raise ValueError("Output manifest is incomplete")
+    for relative, record in manifest["files"].items():
+        path = (root / relative).resolve()
+        path.relative_to(root)
+        if not path.is_file() or path.stat().st_size != record["bytes"] or sha256(path) != record["sha256"]:
+            raise ValueError(f"Output verification failed: {relative}")
+    return {"status": "verified", "output_dir": str(root), "file_count": manifest["file_count"],
+            "total_bytes": sum(row["bytes"] for row in manifest["files"].values())}
+
+
 class AnalysisRun:
     def __init__(self, repo_root, artifact_dir, output_dir, cache_dir, config=None):
         self.repo = Path(repo_root).resolve()
@@ -151,7 +237,7 @@ class AnalysisRun:
                 else:
                     self.config[key] = value
         if self.config["cases"] != list(CASES):
-            raise ValueError("This notebook is fixed to the three approved cases")
+            raise ValueError("This notebook is fixed to the approved case00-04 selection")
         for key in ("feature_tap", "feature_shape", "continuity_feature_tap", "continuity_feature_shape", "decoder_layers", "pca_conditions",
                     "word_alignment", "attention_heads", "attention_modes"):
             if self.config[key] != DEFAULT_CONFIG[key]:
@@ -252,11 +338,10 @@ class AnalysisRun:
         return result
 
     def prepare(self):
+        input_preflight(self.artifact_dir, recover_manifest=False)
         manifest = self.artifact_dir / "artifact_manifest.json"
-        if not manifest.is_file() or sha256(manifest) != MANIFEST_SHA256:
-            raise ValueError("Mount Drive and check the original run002 artifacts folder")
         bundle = self.io.DriveBundle(self.artifact_dir, self.cache / "captures")
-        print("Restoring metadata and only the three selected case ZIPs...", flush=True)
+        print(f"Restoring metadata and only the {len(CASES)} selected case ZIPs...", flush=True)
         run = bundle.metadata()
         dataset = self.cache / "dataset"
         prefix = f"https://raw.githubusercontent.com/seungjoolee24/mllm-line-tracing/{DATASET_COMMIT}/experiments/exp001_qwen3vl4b_trace10/dataset/"
@@ -434,7 +519,7 @@ class AnalysisRun:
         atomic_json(self.output / "environment.json", self.identity["environment"])
         summary = {
             "status": "complete", "analysis_fingerprint": self.fingerprint,
-            "cases": list(CASES), "pca_condition_count": 6,
+            "cases": list(CASES), "pca_condition_count": len(CASES) * 2,
             "attention_grid_count": sum(len(self.word_options(k)) for k in CASES) * 2,
             "stages": receipts,
             "interpretation": ["Descriptive case analysis; no causal or population-level conclusion.",
@@ -454,6 +539,6 @@ class AnalysisRun:
             "file_count": len(files), "total_bytes": sum(item["bytes"] for item in files.values()),
             "files": files,
         })
-        print(f"ANALYSIS COMPLETE / DRIVE VERIFIED: {self.output}", flush=True)
-        return {"status": "complete", "output_dir": str(self.output),
+        print(f"ANALYSIS FILES VERIFIED (mounted Drive; run the sync cell next): {self.output}", flush=True)
+        return {"status": "local_verified", "output_dir": str(self.output),
                 "file_count": len(files), "total_bytes": sum(item["bytes"] for item in files.values())}
