@@ -1,0 +1,1232 @@
+{
+  "cases": [
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          46.5,
+          53.75,
+          57.84375,
+          50.96875,
+          55.40625,
+          50.1875,
+          52.21875,
+          46.8125
+        ],
+        "generated_token_logprob": [
+          -2.0265558760002023e-06,
+          0.0,
+          0.0,
+          -1.1920928244535389e-07,
+          0.0,
+          -1.1920928244535389e-07,
+          0.0,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          13.75,
+          17.5625,
+          19.9375,
+          15.9375,
+          18.25,
+          16.59375,
+          21.8125,
+          19.6875
+        ],
+        "max_absolute_logit_difference": 0.125,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          46.5,
+          53.71875,
+          57.84375,
+          50.96875,
+          55.375,
+          50.1875,
+          52.21875,
+          46.84375
+        ],
+        "replay_top2_margins": [
+          13.78125,
+          17.5625,
+          19.9375,
+          16.0625,
+          18.1875,
+          16.59375,
+          21.84375,
+          19.765625
+        ]
+      },
+      "answer": "brown yellow green orange blue purple end",
+      "exact_match": true,
+      "expected": "brown yellow green orange blue purple end",
+      "generation_tokens": 8,
+      "performance": {
+        "elapsed_seconds": 7.248812437057495,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "question_tokens": 48,
+      "sample_id": "case_00_curve",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          47.125,
+          55.21875,
+          51.125,
+          51.5,
+          51.03125,
+          45.90625
+        ],
+        "generated_token_logprob": [
+          -2.264974000354414e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          13.4375,
+          18.625,
+          18.34375,
+          18.1875,
+          20.671875,
+          19.796875
+        ],
+        "max_absolute_logit_difference": 0.1875,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          47.125,
+          55.21875,
+          51.21875,
+          51.4375,
+          50.96875,
+          45.9375
+        ],
+        "replay_top2_margins": [
+          13.4375,
+          18.65625,
+          18.375,
+          18.1875,
+          20.65625,
+          19.828125
+        ]
+      },
+      "answer": "brown green blue pink end",
+      "exact_match": true,
+      "expected": "brown green blue pink end",
+      "generation_tokens": 6,
+      "performance": {
+        "elapsed_seconds": 6.485443115234375,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9500098560
+      },
+      "question_tokens": 48,
+      "sample_id": "case_01_straight",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 50747544,
+            "files": 36,
+            "tensor_bytes": 50688000
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 313488,
+            "files": 36,
+            "tensor_bytes": 253440
+          },
+          "decoder_hidden": {
+            "file_bytes": 173543310,
+            "files": 73,
+            "tensor_bytes": 173424640
+          },
+          "logits": {
+            "file_bytes": 7296166,
+            "files": 2,
+            "tensor_bytes": 7292928
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3712
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 418770556,
+        "tensor_bytes": 418440320,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          49.0,
+          53.21875,
+          50.875,
+          49.78125,
+          55.65625,
+          52.0625,
+          56.21875,
+          55.0625,
+          51.34375,
+          46.46875
+        ],
+        "generated_token_logprob": [
+          -2.7418097943154862e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          13.34375,
+          17.84375,
+          17.8125,
+          16.96875,
+          21.0,
+          18.8125,
+          20.25,
+          23.453125,
+          20.125,
+          19.28125
+        ],
+        "max_absolute_logit_difference": 0.15625,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          49.0,
+          53.21875,
+          50.9375,
+          49.78125,
+          55.65625,
+          52.03125,
+          56.21875,
+          55.09375,
+          51.34375,
+          46.46875
+        ],
+        "replay_top2_margins": [
+          13.34375,
+          17.84375,
+          17.78125,
+          16.96875,
+          21.0,
+          18.90625,
+          20.15625,
+          23.453125,
+          20.15625,
+          19.28125
+        ]
+      },
+      "answer": "yellow brown purple pink blue orange green red end",
+      "exact_match": true,
+      "expected": "yellow brown purple pink blue orange green red end",
+      "generation_tokens": 10,
+      "performance": {
+        "elapsed_seconds": 5.56591534614563,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "question_tokens": 48,
+      "sample_id": "case_02_elbow",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          43.84375,
+          44.75,
+          51.5,
+          47.28125,
+          49.25,
+          49.4375,
+          54.09375,
+          50.75,
+          40.21875,
+          42.71875
+        ],
+        "generated_token_logprob": [
+          -3.373566141817719e-05,
+          -0.31144624948501587,
+          -2.0265558760002023e-06,
+          -0.37714728713035583,
+          -0.002404657192528248,
+          -1.1920928244535389e-07,
+          0.0,
+          0.0,
+          -0.01829066313803196,
+          -3.576278118089249e-07
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          10.53125,
+          1.5,
+          13.0625,
+          0.78125,
+          6.0,
+          16.03125,
+          21.75,
+          17.53125,
+          4.25,
+          15.171875
+        ],
+        "max_absolute_logit_difference": 0.1015625,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          43.84375,
+          44.6875,
+          51.5625,
+          47.3125,
+          49.28125,
+          49.375,
+          54.0,
+          50.78125,
+          40.125,
+          42.65625
+        ],
+        "replay_top2_margins": [
+          10.5,
+          1.4375,
+          13.125,
+          0.78125,
+          6.03125,
+          16.0,
+          21.71875,
+          17.59375,
+          4.15625,
+          15.125
+        ]
+      },
+      "answer": "orange yellow green brown blue purple red pink end",
+      "exact_match": false,
+      "expected": "orange pink red purple blue brown green yellow end",
+      "generation_tokens": 10,
+      "performance": {
+        "elapsed_seconds": 8.609820127487183,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "question_tokens": 48,
+      "sample_id": "case_03_swirl",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          39.78125,
+          51.5,
+          54.40625,
+          49.5625,
+          49.125,
+          49.1875,
+          51.8125,
+          51.59375,
+          40.03125,
+          41.625
+        ],
+        "generated_token_logprob": [
+          -0.0012361512053757906,
+          -8.010543388081715e-05,
+          -1.6689160474925302e-05,
+          -0.00011216964776394889,
+          -3.576278118089249e-07,
+          -4.124556289752945e-05,
+          -1.7762025890988298e-05,
+          0.0,
+          -0.0010140759404748678,
+          -9.536738616588991e-07
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          7.28125,
+          9.5,
+          10.90625,
+          9.53125,
+          15.21875,
+          10.125,
+          10.875,
+          17.1875,
+          7.90625,
+          14.265625
+        ],
+        "max_absolute_logit_difference": 0.1171875,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          39.84375,
+          51.46875,
+          54.5,
+          49.59375,
+          49.1875,
+          49.21875,
+          51.84375,
+          51.625,
+          40.0625,
+          41.6875
+        ],
+        "replay_top2_margins": [
+          7.34375,
+          9.4375,
+          11.0,
+          9.53125,
+          15.25,
+          10.125,
+          10.9375,
+          17.21875,
+          7.90625,
+          14.328125
+        ]
+      },
+      "answer": "orange green blue yellow pink brown red purple end",
+      "exact_match": true,
+      "expected": "orange green blue yellow pink brown red purple end",
+      "generation_tokens": 10,
+      "performance": {
+        "elapsed_seconds": 9.069620370864868,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "question_tokens": 48,
+      "sample_id": "case_04_curve",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          49.5625,
+          56.5625,
+          53.21875,
+          53.9375,
+          55.625,
+          50.625,
+          52.9375,
+          50.4375,
+          50.34375,
+          46.15625
+        ],
+        "generated_token_logprob": [
+          -3.576278118089249e-07,
+          0.0,
+          -4.768370445162873e-07,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          14.875,
+          17.28125,
+          14.90625,
+          18.59375,
+          18.46875,
+          20.828125,
+          23.0,
+          17.5625,
+          18.09375,
+          19.0625
+        ],
+        "max_absolute_logit_difference": 0.109375,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          49.59375,
+          56.5625,
+          53.21875,
+          53.96875,
+          55.625,
+          50.625,
+          53.0,
+          50.40625,
+          50.40625,
+          46.15625
+        ],
+        "replay_top2_margins": [
+          14.875,
+          17.28125,
+          14.96875,
+          18.625,
+          18.40625,
+          20.828125,
+          23.015625,
+          17.5625,
+          18.15625,
+          19.125
+        ]
+      },
+      "answer": "blue yellow purple brown green orange red pink end",
+      "exact_match": true,
+      "expected": "blue yellow purple brown green orange red pink end",
+      "generation_tokens": 10,
+      "performance": {
+        "elapsed_seconds": 5.217008113861084,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "question_tokens": 48,
+      "sample_id": "case_05_straight",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          36.75,
+          53.8125,
+          51.0,
+          55.78125,
+          54.9375,
+          56.15625,
+          38.75,
+          42.71875
+        ],
+        "generated_token_logprob": [
+          -0.586702823638916,
+          -6.556489552167477e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.006263507064431906,
+          -8.344646857949556e-07
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          0.9375,
+          11.84375,
+          17.25,
+          19.09375,
+          19.53125,
+          23.0,
+          5.78125,
+          14.15625
+        ],
+        "max_absolute_logit_difference": 0.1171875,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          36.75,
+          53.84375,
+          51.0,
+          55.8125,
+          54.90625,
+          56.125,
+          38.65625,
+          42.71875
+        ],
+        "replay_top2_margins": [
+          0.90625,
+          11.9375,
+          17.21875,
+          19.15625,
+          19.5,
+          22.9375,
+          5.71875,
+          14.171875
+        ]
+      },
+      "answer": "pink brown purple green blue red end",
+      "exact_match": true,
+      "expected": "pink brown purple green blue red end",
+      "generation_tokens": 8,
+      "performance": {
+        "elapsed_seconds": 8.611520051956177,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "question_tokens": 48,
+      "sample_id": "case_06_elbow",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          46.15625,
+          53.875,
+          52.375,
+          56.6875,
+          55.46875,
+          49.1875,
+          42.4375,
+          45.46875
+        ],
+        "generated_token_logprob": [
+          -0.0014141331193968654,
+          -2.3841855067985307e-07,
+          0.0,
+          0.0,
+          -7.152555099310121e-07,
+          -1.1920928244535389e-07,
+          -0.0013446108205243945,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          7.09375,
+          15.28125,
+          18.875,
+          19.25,
+          14.125,
+          16.40625,
+          7.0625,
+          18.234375
+        ],
+        "max_absolute_logit_difference": 0.109375,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          46.15625,
+          53.90625,
+          52.34375,
+          56.6875,
+          55.5,
+          49.15625,
+          42.46875,
+          45.4375
+        ],
+        "replay_top2_margins": [
+          7.15625,
+          15.25,
+          18.84375,
+          19.25,
+          14.125,
+          16.34375,
+          7.125,
+          18.25
+        ]
+      },
+      "answer": "yellow brown orange red blue purple end",
+      "exact_match": true,
+      "expected": "yellow brown orange red blue purple end",
+      "generation_tokens": 8,
+      "performance": {
+        "elapsed_seconds": 6.412057399749756,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "question_tokens": 48,
+      "sample_id": "case_07_swirl",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          46.0,
+          56.28125,
+          54.625,
+          49.71875,
+          37.8125,
+          45.96875
+        ],
+        "generated_token_logprob": [
+          -1.0013530300057027e-05,
+          0.0,
+          0.0,
+          0.0,
+          -0.0728921964764595,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          12.28125,
+          21.90625,
+          18.15625,
+          17.625,
+          2.5625,
+          18.375
+        ],
+        "max_absolute_logit_difference": 0.078125,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          46.0,
+          56.28125,
+          54.65625,
+          49.75,
+          37.84375,
+          45.96875
+        ],
+        "replay_top2_margins": [
+          12.28125,
+          21.90625,
+          18.1875,
+          17.65625,
+          2.65625,
+          18.375
+        ]
+      },
+      "answer": "brown blue purple pink end",
+      "exact_match": true,
+      "expected": "brown blue purple pink end",
+      "generation_tokens": 6,
+      "performance": {
+        "elapsed_seconds": 6.760863780975342,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9500098560
+      },
+      "question_tokens": 48,
+      "sample_id": "case_08_curve",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 50747544,
+            "files": 36,
+            "tensor_bytes": 50688000
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 313488,
+            "files": 36,
+            "tensor_bytes": 253440
+          },
+          "decoder_hidden": {
+            "file_bytes": 173543310,
+            "files": 73,
+            "tensor_bytes": 173424640
+          },
+          "logits": {
+            "file_bytes": 7296166,
+            "files": 2,
+            "tensor_bytes": 7292928
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3712
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 418770556,
+        "tensor_bytes": 418440320,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    },
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          43.09375,
+          56.0,
+          53.6875,
+          56.28125,
+          55.25,
+          53.25,
+          46.96875,
+          51.625,
+          49.4375,
+          45.53125
+        ],
+        "generated_token_logprob": [
+          -4.0531076592742465e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0018693606834858656,
+          -0.031639762222766876,
+          0.0,
+          -1.1920928244535389e-07,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          12.734375,
+          23.9375,
+          16.78125,
+          21.03125,
+          17.375,
+          6.21875,
+          3.375,
+          20.265625,
+          16.0,
+          18.25
+        ],
+        "max_absolute_logit_difference": 0.109375,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          43.0625,
+          56.03125,
+          53.71875,
+          56.28125,
+          55.3125,
+          53.28125,
+          47.0,
+          51.625,
+          49.46875,
+          45.5
+        ],
+        "replay_top2_margins": [
+          12.734375,
+          23.9375,
+          16.8125,
+          21.0,
+          17.4375,
+          6.28125,
+          3.4375,
+          20.25,
+          16.03125,
+          18.203125
+        ]
+      },
+      "answer": "purple red brown blue yellow green pink orange end",
+      "exact_match": true,
+      "expected": "purple red brown blue yellow green pink orange end",
+      "generation_tokens": 10,
+      "performance": {
+        "elapsed_seconds": 5.2625932693481445,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "question_tokens": 48,
+      "sample_id": "case_09_elbow",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    }
+  ],
+  "completed_cases": 10,
+  "estimate_note": "Linear estimate only; actual prompt/output lengths change attention size.",
+  "full_ten_case_linear_estimate_gib": 3.961014948785305,
+  "intended_cases": 10,
+  "status": "complete",
+  "tensor_file_bytes": 4253107416,
+  "tensor_file_mib": 4056.0793075561523,
+  "total_result_bytes_before_report": 4258620389
+}

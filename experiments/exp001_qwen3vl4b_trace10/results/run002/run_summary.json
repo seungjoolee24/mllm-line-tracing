@@ -1,0 +1,809 @@
+{
+  "cases": [
+    {
+      "family": "curve",
+      "performance": {
+        "elapsed_seconds": 7.248812437057495,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "sample_id": "case_00_curve",
+      "score": {
+        "correct_prefix_colors": 6,
+        "exact_match": true,
+        "expected_colors": [
+          "brown",
+          "yellow",
+          "green",
+          "orange",
+          "blue",
+          "purple"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "brown",
+          "yellow",
+          "green",
+          "orange",
+          "blue",
+          "purple",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "straight",
+      "performance": {
+        "elapsed_seconds": 6.485443115234375,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9500098560
+      },
+      "sample_id": "case_01_straight",
+      "score": {
+        "correct_prefix_colors": 4,
+        "exact_match": true,
+        "expected_colors": [
+          "brown",
+          "green",
+          "blue",
+          "pink"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "brown",
+          "green",
+          "blue",
+          "pink",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 50747544,
+            "files": 36,
+            "tensor_bytes": 50688000
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 313488,
+            "files": 36,
+            "tensor_bytes": 253440
+          },
+          "decoder_hidden": {
+            "file_bytes": 173543310,
+            "files": 73,
+            "tensor_bytes": 173424640
+          },
+          "logits": {
+            "file_bytes": 7296166,
+            "files": 2,
+            "tensor_bytes": 7292928
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3712
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 418770556,
+        "tensor_bytes": 418440320,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "elbow",
+      "performance": {
+        "elapsed_seconds": 5.56591534614563,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "sample_id": "case_02_elbow",
+      "score": {
+        "correct_prefix_colors": 8,
+        "exact_match": true,
+        "expected_colors": [
+          "yellow",
+          "brown",
+          "purple",
+          "pink",
+          "blue",
+          "orange",
+          "green",
+          "red"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "yellow",
+          "brown",
+          "purple",
+          "pink",
+          "blue",
+          "orange",
+          "green",
+          "red",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "swirl",
+      "performance": {
+        "elapsed_seconds": 8.609820127487183,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "sample_id": "case_03_swirl",
+      "score": {
+        "correct_prefix_colors": 1,
+        "exact_match": false,
+        "expected_colors": [
+          "orange",
+          "pink",
+          "red",
+          "purple",
+          "blue",
+          "brown",
+          "green",
+          "yellow"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "orange",
+          "yellow",
+          "green",
+          "brown",
+          "blue",
+          "purple",
+          "red",
+          "pink",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "curve",
+      "performance": {
+        "elapsed_seconds": 9.069620370864868,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "sample_id": "case_04_curve",
+      "score": {
+        "correct_prefix_colors": 8,
+        "exact_match": true,
+        "expected_colors": [
+          "orange",
+          "green",
+          "blue",
+          "yellow",
+          "pink",
+          "brown",
+          "red",
+          "purple"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "orange",
+          "green",
+          "blue",
+          "yellow",
+          "pink",
+          "brown",
+          "red",
+          "purple",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "straight",
+      "performance": {
+        "elapsed_seconds": 5.217008113861084,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "sample_id": "case_05_straight",
+      "score": {
+        "correct_prefix_colors": 8,
+        "exact_match": true,
+        "expected_colors": [
+          "blue",
+          "yellow",
+          "purple",
+          "brown",
+          "green",
+          "orange",
+          "red",
+          "pink"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "blue",
+          "yellow",
+          "purple",
+          "brown",
+          "green",
+          "orange",
+          "red",
+          "pink",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "elbow",
+      "performance": {
+        "elapsed_seconds": 8.611520051956177,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "sample_id": "case_06_elbow",
+      "score": {
+        "correct_prefix_colors": 6,
+        "exact_match": true,
+        "expected_colors": [
+          "pink",
+          "brown",
+          "purple",
+          "green",
+          "blue",
+          "red"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "pink",
+          "brown",
+          "purple",
+          "green",
+          "blue",
+          "red",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "swirl",
+      "performance": {
+        "elapsed_seconds": 6.412057399749756,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9502195712
+      },
+      "sample_id": "case_07_swirl",
+      "score": {
+        "correct_prefix_colors": 6,
+        "exact_match": true,
+        "expected_colors": [
+          "yellow",
+          "brown",
+          "orange",
+          "red",
+          "blue",
+          "purple"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "yellow",
+          "brown",
+          "orange",
+          "red",
+          "blue",
+          "purple",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "curve",
+      "performance": {
+        "elapsed_seconds": 6.760863780975342,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9500098560
+      },
+      "sample_id": "case_08_curve",
+      "score": {
+        "correct_prefix_colors": 4,
+        "exact_match": true,
+        "expected_colors": [
+          "brown",
+          "blue",
+          "purple",
+          "pink"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "brown",
+          "blue",
+          "purple",
+          "pink",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 50747544,
+            "files": 36,
+            "tensor_bytes": 50688000
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 313488,
+            "files": 36,
+            "tensor_bytes": 253440
+          },
+          "decoder_hidden": {
+            "file_bytes": 173543310,
+            "files": 73,
+            "tensor_bytes": 173424640
+          },
+          "logits": {
+            "file_bytes": 7296166,
+            "files": 2,
+            "tensor_bytes": 7292928
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3712
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 418770556,
+        "tensor_bytes": 418440320,
+        "tensor_files": 206
+      }
+    },
+    {
+      "family": "elbow",
+      "performance": {
+        "elapsed_seconds": 5.2625932693481445,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9504292864
+      },
+      "sample_id": "case_09_elbow",
+      "score": {
+        "correct_prefix_colors": 8,
+        "exact_match": true,
+        "expected_colors": [
+          "purple",
+          "red",
+          "brown",
+          "blue",
+          "yellow",
+          "green",
+          "pink",
+          "orange"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "purple",
+          "red",
+          "brown",
+          "blue",
+          "yellow",
+          "green",
+          "pink",
+          "orange",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 54433944,
+            "files": 36,
+            "tensor_bytes": 54374400
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 331920,
+            "files": 36,
+            "tensor_bytes": 271872
+          },
+          "decoder_hidden": {
+            "file_bytes": 175038350,
+            "files": 73,
+            "tensor_bytes": 174919680
+          },
+          "logits": {
+            "file_bytes": 12158118,
+            "files": 2,
+            "tensor_bytes": 12154880
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3744
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 428832380,
+        "tensor_bytes": 428502176,
+        "tensor_files": 206
+      }
+    }
+  ],
+  "completed_cases": 10,
+  "failures": [],
+  "intended_cases": 10,
+  "max_peak_gpu_allocated_bytes": 9267371520,
+  "max_peak_gpu_reserved_bytes": 9504292864,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+  "model_revision": "70c41a926abfc92501c4a4da369a8d6312915b61",
+  "run_config_sha256": "901ddae2ac2ec4b9cd11d598b02110395b2a4ce524eb27b8b89a44822c5f855a",
+  "schema_version": "1.1",
+  "selected_cases_this_invocation": 10,
+  "status": "complete",
+  "total_tensor_bytes": 4249805264,
+  "total_tensor_file_bytes": 4253107416
+}

@@ -6,6 +6,14 @@
 
 [Pages 실험 기획](https://chatgpt.com/space/page_e1d9472c14d481918accb471b01e85be)
 
+## 수집과 분석 노트북
+
+- [수집 노트북](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/activation_pilot.ipynb): 모델을 실행하고 활성값을 기록한다.
+- [분석 노트북](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/analysis_run002.ipynb): 저장한 run002 결과를 CPU에서 분석한다. 모델 가중치와 GPU는 필요하지 않다.
+- [정식 결과 요약](results/run002/run_summary.json), [용량 보고서](results/run002/size_report.json), [파일 manifest](results/run002_release/artifact_manifest.json)
+
+프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP은 GitHub 릴리스에 직접 업로드 중이며, 업로드가 끝난 뒤 분석 노트북에서 공개 결과를 받을 수 있다.
+
 ## 실행 조건
 
 - 모델: `Qwen/Qwen3-VL-4B-Instruct`, revision은 [config.json](config.json)에 고정.

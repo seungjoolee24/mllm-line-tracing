@@ -1,0 +1,7127 @@
+{
+  "alignment": {
+    "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+    "generated_token_logits": [
+      49.5625,
+      56.5625,
+      53.21875,
+      53.9375,
+      55.625,
+      50.625,
+      52.9375,
+      50.4375,
+      50.34375,
+      46.15625
+    ],
+    "generated_token_logprob": [
+      -3.576278118089249e-07,
+      0.0,
+      -4.768370445162873e-07,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "generation_mismatch_steps": [],
+    "generation_raw_argmax_matches_emitted": true,
+    "generation_top2_margins": [
+      14.875,
+      17.28125,
+      14.90625,
+      18.59375,
+      18.46875,
+      20.828125,
+      23.0,
+      17.5625,
+      18.09375,
+      19.0625
+    ],
+    "max_absolute_logit_difference": 0.109375,
+    "replay_matches_generation_argmax": true,
+    "replay_mismatch_steps": [],
+    "replay_target_logits": [
+      49.59375,
+      56.5625,
+      53.21875,
+      53.96875,
+      55.625,
+      50.625,
+      53.0,
+      50.40625,
+      50.40625,
+      46.15625
+    ],
+    "replay_top2_margins": [
+      14.875,
+      17.28125,
+      14.96875,
+      18.625,
+      18.40625,
+      20.828125,
+      23.015625,
+      17.5625,
+      18.15625,
+      19.125
+    ]
+  },
+  "capture_semantics": {
+    "attention": "all heads, union(question, answer predictor, generated token positions) to decoder image key positions",
+    "attention_normalization": "original full-sequence softmax; not image-only renormalized",
+    "decoder_input": "before decoder block, includes previous DeepStack injection",
+    "decoder_output": "after block MLP residual and before same-index DeepStack injection",
+    "vision": "block input and output, static image encoding during replay"
+  },
+  "capture_spec": {
+    "decoder_layers": 36,
+    "deepstack_mergers": 3,
+    "vision_layers": 24
+  },
+  "environment": {
+    "cuda": "12.6",
+    "gpu": "Tesla T4",
+    "gpu_total_bytes": 15637086208,
+    "initial_free_disk_bytes": 102793285632,
+    "python": "3.13.16",
+    "torch": "2.8.0+cu126",
+    "transformers": "4.57.1"
+  },
+  "family": "straight",
+  "generation": {
+    "do_sample": false,
+    "effective_generation_config": {
+      "_from_model_config": false,
+      "assistant_confidence_threshold": 0.4,
+      "assistant_early_exit": null,
+      "assistant_lookbehind": 10,
+      "bad_words_ids": null,
+      "begin_suppress_tokens": null,
+      "bos_token_id": 151643,
+      "cache_config": null,
+      "cache_implementation": null,
+      "constraints": null,
+      "decoder_start_token_id": null,
+      "disable_compile": false,
+      "diversity_penalty": 0.0,
+      "do_sample": false,
+      "dola_layers": null,
+      "early_stopping": false,
+      "encoder_no_repeat_ngram_size": 0,
+      "encoder_repetition_penalty": 1.0,
+      "eos_token_id": [
+        151645,
+        151643
+      ],
+      "epsilon_cutoff": 0.0,
+      "eta_cutoff": 0.0,
+      "exponential_decay_length_penalty": null,
+      "force_words_ids": null,
+      "forced_bos_token_id": null,
+      "forced_eos_token_id": null,
+      "guidance_scale": null,
+      "is_assistant": false,
+      "length_penalty": 1.0,
+      "low_memory": null,
+      "max_length": 20,
+      "max_matching_ngram_size": null,
+      "max_new_tokens": 64,
+      "max_time": null,
+      "min_length": 0,
+      "min_new_tokens": null,
+      "min_p": null,
+      "no_repeat_ngram_size": 0,
+      "num_assistant_tokens": 20,
+      "num_assistant_tokens_schedule": "constant",
+      "num_beam_groups": 1,
+      "num_beams": 1,
+      "num_return_sequences": 1,
+      "output_attentions": false,
+      "output_hidden_states": false,
+      "output_logits": true,
+      "output_scores": false,
+      "pad_token_id": 151643,
+      "penalty_alpha": null,
+      "prefill_chunk_size": null,
+      "prompt_lookup_num_tokens": null,
+      "remove_invalid_values": false,
+      "renormalize_logits": false,
+      "repetition_penalty": 1.0,
+      "return_dict_in_generate": true,
+      "return_legacy_cache": null,
+      "sequence_bias": null,
+      "stop_strings": null,
+      "suppress_tokens": null,
+      "target_lookbehind": 10,
+      "temperature": 1.0,
+      "token_healing": false,
+      "top_k": 50,
+      "top_p": 1.0,
+      "transformers_version": "4.57.1",
+      "typical_p": 1.0,
+      "use_cache": true,
+      "watermarking_config": null
+    },
+    "hit_token_limit": false,
+    "max_new_tokens": 64,
+    "num_beams": 1,
+    "raw_answer": "blue yellow purple brown green orange red pink end",
+    "repetition_penalty": 1.0,
+    "token_details": {
+      "color_spans": [
+        {
+          "char_span": [
+            0,
+            4
+          ],
+          "color": "blue",
+          "generation_steps": [
+            0
+          ],
+          "predictor_positions": [
+            457
+          ],
+          "token_positions": [
+            458
+          ]
+        },
+        {
+          "char_span": [
+            5,
+            11
+          ],
+          "color": "yellow",
+          "generation_steps": [
+            1
+          ],
+          "predictor_positions": [
+            458
+          ],
+          "token_positions": [
+            459
+          ]
+        },
+        {
+          "char_span": [
+            12,
+            18
+          ],
+          "color": "purple",
+          "generation_steps": [
+            2
+          ],
+          "predictor_positions": [
+            459
+          ],
+          "token_positions": [
+            460
+          ]
+        },
+        {
+          "char_span": [
+            19,
+            24
+          ],
+          "color": "brown",
+          "generation_steps": [
+            3
+          ],
+          "predictor_positions": [
+            460
+          ],
+          "token_positions": [
+            461
+          ]
+        },
+        {
+          "char_span": [
+            25,
+            30
+          ],
+          "color": "green",
+          "generation_steps": [
+            4
+          ],
+          "predictor_positions": [
+            461
+          ],
+          "token_positions": [
+            462
+          ]
+        },
+        {
+          "char_span": [
+            31,
+            37
+          ],
+          "color": "orange",
+          "generation_steps": [
+            5
+          ],
+          "predictor_positions": [
+            462
+          ],
+          "token_positions": [
+            463
+          ]
+        },
+        {
+          "char_span": [
+            38,
+            41
+          ],
+          "color": "red",
+          "generation_steps": [
+            6
+          ],
+          "predictor_positions": [
+            463
+          ],
+          "token_positions": [
+            464
+          ]
+        },
+        {
+          "char_span": [
+            42,
+            46
+          ],
+          "color": "pink",
+          "generation_steps": [
+            7
+          ],
+          "predictor_positions": [
+            464
+          ],
+          "token_positions": [
+            465
+          ]
+        }
+      ],
+      "decoded_with_special_tokens": "blue yellow purple brown green orange red pink end<|im_end|>",
+      "tokens": [
+        {
+          "decoded_char_end": 4,
+          "decoded_char_start": 0,
+          "generation_step": 0,
+          "position": 458,
+          "predictor_position": 457,
+          "token_id": 12203,
+          "token_piece": "blue"
+        },
+        {
+          "decoded_char_end": 11,
+          "decoded_char_start": 4,
+          "generation_step": 1,
+          "position": 459,
+          "predictor_position": 458,
+          "token_id": 13753,
+          "token_piece": "Ġyellow"
+        },
+        {
+          "decoded_char_end": 18,
+          "decoded_char_start": 11,
+          "generation_step": 2,
+          "position": 460,
+          "predictor_position": 459,
+          "token_id": 24932,
+          "token_piece": "Ġpurple"
+        },
+        {
+          "decoded_char_end": 24,
+          "decoded_char_start": 18,
+          "generation_step": 3,
+          "position": 461,
+          "predictor_position": 460,
+          "token_id": 13876,
+          "token_piece": "Ġbrown"
+        },
+        {
+          "decoded_char_end": 30,
+          "decoded_char_start": 24,
+          "generation_step": 4,
+          "position": 462,
+          "predictor_position": 461,
+          "token_id": 6176,
+          "token_piece": "Ġgreen"
+        },
+        {
+          "decoded_char_end": 37,
+          "decoded_char_start": 30,
+          "generation_step": 5,
+          "position": 463,
+          "predictor_position": 462,
+          "token_id": 18575,
+          "token_piece": "Ġorange"
+        },
+        {
+          "decoded_char_end": 41,
+          "decoded_char_start": 37,
+          "generation_step": 6,
+          "position": 464,
+          "predictor_position": 463,
+          "token_id": 2518,
+          "token_piece": "Ġred"
+        },
+        {
+          "decoded_char_end": 46,
+          "decoded_char_start": 41,
+          "generation_step": 7,
+          "position": 465,
+          "predictor_position": 464,
+          "token_id": 18217,
+          "token_piece": "Ġpink"
+        },
+        {
+          "decoded_char_end": 50,
+          "decoded_char_start": 46,
+          "generation_step": 8,
+          "position": 466,
+          "predictor_position": 465,
+          "token_id": 835,
+          "token_piece": "Ġend"
+        },
+        {
+          "decoded_char_end": 60,
+          "decoded_char_start": 50,
+          "generation_step": 9,
+          "position": 467,
+          "predictor_position": 466,
+          "token_id": 151645,
+          "token_piece": "<|im_end|>"
+        }
+      ]
+    },
+    "token_ids": [
+      12203,
+      13753,
+      24932,
+      13876,
+      6176,
+      18575,
+      2518,
+      18217,
+      835,
+      151645
+    ],
+    "use_model_defaults": false
+  },
+  "input": {
+    "image": "images/case_05_straight.png",
+    "image_grid_thw": [
+      [
+        1,
+        40,
+        40
+      ]
+    ],
+    "image_sha256": "09aa97541de9e63deaa4b5c389eb1f2cd305dd073cf7bf87f35120ad4e34e07c",
+    "prompt_token_ids": [
+      151644,
+      872,
+      198,
+      151652,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151655,
+      151653,
+      12480,
+      279,
+      3175,
+      19259,
+      1555,
+      504,
+      328,
+      311,
+      468,
+      13,
+      1759,
+      279,
+      7987,
+      315,
+      279,
+      25362,
+      304,
+      279,
+      1973,
+      23057,
+      13,
+      9258,
+      1172,
+      42047,
+      1894,
+      5036,
+      18663,
+      553,
+      3175,
+      12621,
+      11,
+      8110,
+      553,
+      835,
+      13,
+      57622,
+      1894,
+      5036,
+      25,
+      2518,
+      18575,
+      13753,
+      6176,
+      6303,
+      24932,
+      18217,
+      13876,
+      13,
+      151645,
+      198,
+      151644,
+      77091,
+      198
+    ],
+    "question": "Follow the single continuous line from S to E. List the colors of the circles in the order encountered. Output only lowercase color names separated by single spaces, followed by end. Allowed color names: red orange yellow green blue purple pink brown.",
+    "question_sha256": "b9d7dc4fb41a3b4cd143dbe89eacf71e7cc752e62396dc7b4d8d53e9f2886571",
+    "question_span_method": "exact_question_subsequence",
+    "rendered_chat": "<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>Follow the single continuous line from S to E. List the colors of the circles in the order encountered. Output only lowercase color names separated by single spaces, followed by end. Allowed color names: red orange yellow green blue purple pink brown.<|im_end|>\n<|im_start|>assistant\n",
+    "resize": false,
+    "source_size": [
+      640,
+      640
+    ],
+    "token_table": [
+      {
+        "kind": "prompt_other",
+        "position": 0,
+        "token_id": 151644,
+        "token_piece": "<|im_start|>"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 1,
+        "token_id": 872,
+        "token_piece": "user"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 2,
+        "token_id": 198,
+        "token_piece": "Ċ"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 3,
+        "token_id": 151652,
+        "token_piece": "<|vision_start|>"
+      },
+      {
+        "kind": "image",
+        "position": 4,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 5,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 6,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 7,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 8,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 9,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 10,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 11,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 12,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 13,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 14,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 15,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 16,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 17,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 18,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 19,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 20,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 21,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 22,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 23,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 24,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 25,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 26,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 27,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 28,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 29,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 30,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 31,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 32,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 33,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 34,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 35,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 36,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 37,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 38,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 39,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 40,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 41,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 42,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 43,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 44,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 45,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 46,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 47,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 48,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 49,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 50,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 51,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 52,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 53,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 54,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 55,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 56,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 57,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 58,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 59,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 60,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 61,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 62,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 63,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 64,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 65,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 66,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 67,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 68,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 69,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 70,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 71,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 72,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 73,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 74,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 75,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 76,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 77,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 78,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 79,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 80,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 81,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 82,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 83,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 84,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 85,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 86,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 87,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 88,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 89,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 90,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 91,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 92,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 93,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 94,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 95,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 96,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 97,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 98,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 99,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 100,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 101,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 102,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 103,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 104,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 105,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 106,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 107,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 108,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 109,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 110,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 111,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 112,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 113,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 114,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 115,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 116,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 117,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 118,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 119,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 120,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 121,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 122,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 123,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 124,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 125,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 126,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 127,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 128,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 129,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 130,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 131,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 132,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 133,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 134,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 135,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 136,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 137,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 138,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 139,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 140,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 141,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 142,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 143,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 144,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 145,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 146,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 147,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 148,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 149,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 150,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 151,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 152,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 153,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 154,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 155,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 156,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 157,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 158,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 159,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 160,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 161,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 162,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 163,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 164,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 165,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 166,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 167,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 168,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 169,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 170,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 171,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 172,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 173,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 174,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 175,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 176,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 177,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 178,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 179,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 180,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 181,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 182,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 183,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 184,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 185,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 186,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 187,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 188,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 189,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 190,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 191,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 192,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 193,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 194,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 195,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 196,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 197,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 198,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 199,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 200,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 201,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 202,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 203,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 204,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 205,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 206,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 207,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 208,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 209,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 210,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 211,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 212,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 213,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 214,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 215,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 216,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 217,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 218,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 219,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 220,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 221,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 222,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 223,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 224,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 225,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 226,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 227,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 228,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 229,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 230,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 231,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 232,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 233,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 234,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 235,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 236,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 237,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 238,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 239,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 240,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 241,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 242,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 243,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 244,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 245,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 246,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 247,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 248,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 249,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 250,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 251,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 252,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 253,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 254,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 255,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 256,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 257,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 258,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 259,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 260,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 261,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 262,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 263,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 264,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 265,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 266,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 267,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 268,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 269,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 270,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 271,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 272,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 273,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 274,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 275,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 276,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 277,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 278,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 279,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 280,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 281,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 282,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 283,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 284,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 285,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 286,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 287,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 288,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 289,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 290,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 291,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 292,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 293,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 294,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 295,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 296,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 297,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 298,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 299,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 300,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 301,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 302,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 303,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 304,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 305,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 306,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 307,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 308,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 309,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 310,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 311,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 312,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 313,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 314,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 315,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 316,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 317,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 318,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 319,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 320,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 321,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 322,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 323,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 324,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 325,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 326,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 327,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 328,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 329,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 330,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 331,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 332,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 333,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 334,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 335,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 336,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 337,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 338,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 339,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 340,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 341,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 342,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 343,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 344,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 345,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 346,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 347,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 348,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 349,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 350,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 351,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 352,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 353,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 354,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 355,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 356,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 357,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 358,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 359,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 360,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 361,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 362,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 363,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 364,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 365,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 366,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 367,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 368,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 369,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 370,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 371,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 372,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 373,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 374,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 375,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 376,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 377,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 378,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 379,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 380,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 381,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 382,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 383,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 384,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 385,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 386,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 387,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 388,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 389,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 390,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 391,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 392,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 393,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 394,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 395,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 396,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 397,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 398,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 399,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 400,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 401,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 402,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "image",
+        "position": 403,
+        "token_id": 151655,
+        "token_piece": "<|image_pad|>"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 404,
+        "token_id": 151653,
+        "token_piece": "<|vision_end|>"
+      },
+      {
+        "kind": "question",
+        "position": 405,
+        "token_id": 12480,
+        "token_piece": "Follow"
+      },
+      {
+        "kind": "question",
+        "position": 406,
+        "token_id": 279,
+        "token_piece": "Ġthe"
+      },
+      {
+        "kind": "question",
+        "position": 407,
+        "token_id": 3175,
+        "token_piece": "Ġsingle"
+      },
+      {
+        "kind": "question",
+        "position": 408,
+        "token_id": 19259,
+        "token_piece": "Ġcontinuous"
+      },
+      {
+        "kind": "question",
+        "position": 409,
+        "token_id": 1555,
+        "token_piece": "Ġline"
+      },
+      {
+        "kind": "question",
+        "position": 410,
+        "token_id": 504,
+        "token_piece": "Ġfrom"
+      },
+      {
+        "kind": "question",
+        "position": 411,
+        "token_id": 328,
+        "token_piece": "ĠS"
+      },
+      {
+        "kind": "question",
+        "position": 412,
+        "token_id": 311,
+        "token_piece": "Ġto"
+      },
+      {
+        "kind": "question",
+        "position": 413,
+        "token_id": 468,
+        "token_piece": "ĠE"
+      },
+      {
+        "kind": "question",
+        "position": 414,
+        "token_id": 13,
+        "token_piece": "."
+      },
+      {
+        "kind": "question",
+        "position": 415,
+        "token_id": 1759,
+        "token_piece": "ĠList"
+      },
+      {
+        "kind": "question",
+        "position": 416,
+        "token_id": 279,
+        "token_piece": "Ġthe"
+      },
+      {
+        "kind": "question",
+        "position": 417,
+        "token_id": 7987,
+        "token_piece": "Ġcolors"
+      },
+      {
+        "kind": "question",
+        "position": 418,
+        "token_id": 315,
+        "token_piece": "Ġof"
+      },
+      {
+        "kind": "question",
+        "position": 419,
+        "token_id": 279,
+        "token_piece": "Ġthe"
+      },
+      {
+        "kind": "question",
+        "position": 420,
+        "token_id": 25362,
+        "token_piece": "Ġcircles"
+      },
+      {
+        "kind": "question",
+        "position": 421,
+        "token_id": 304,
+        "token_piece": "Ġin"
+      },
+      {
+        "kind": "question",
+        "position": 422,
+        "token_id": 279,
+        "token_piece": "Ġthe"
+      },
+      {
+        "kind": "question",
+        "position": 423,
+        "token_id": 1973,
+        "token_piece": "Ġorder"
+      },
+      {
+        "kind": "question",
+        "position": 424,
+        "token_id": 23057,
+        "token_piece": "Ġencountered"
+      },
+      {
+        "kind": "question",
+        "position": 425,
+        "token_id": 13,
+        "token_piece": "."
+      },
+      {
+        "kind": "question",
+        "position": 426,
+        "token_id": 9258,
+        "token_piece": "ĠOutput"
+      },
+      {
+        "kind": "question",
+        "position": 427,
+        "token_id": 1172,
+        "token_piece": "Ġonly"
+      },
+      {
+        "kind": "question",
+        "position": 428,
+        "token_id": 42047,
+        "token_piece": "Ġlowercase"
+      },
+      {
+        "kind": "question",
+        "position": 429,
+        "token_id": 1894,
+        "token_piece": "Ġcolor"
+      },
+      {
+        "kind": "question",
+        "position": 430,
+        "token_id": 5036,
+        "token_piece": "Ġnames"
+      },
+      {
+        "kind": "question",
+        "position": 431,
+        "token_id": 18663,
+        "token_piece": "Ġseparated"
+      },
+      {
+        "kind": "question",
+        "position": 432,
+        "token_id": 553,
+        "token_piece": "Ġby"
+      },
+      {
+        "kind": "question",
+        "position": 433,
+        "token_id": 3175,
+        "token_piece": "Ġsingle"
+      },
+      {
+        "kind": "question",
+        "position": 434,
+        "token_id": 12621,
+        "token_piece": "Ġspaces"
+      },
+      {
+        "kind": "question",
+        "position": 435,
+        "token_id": 11,
+        "token_piece": ","
+      },
+      {
+        "kind": "question",
+        "position": 436,
+        "token_id": 8110,
+        "token_piece": "Ġfollowed"
+      },
+      {
+        "kind": "question",
+        "position": 437,
+        "token_id": 553,
+        "token_piece": "Ġby"
+      },
+      {
+        "kind": "question",
+        "position": 438,
+        "token_id": 835,
+        "token_piece": "Ġend"
+      },
+      {
+        "kind": "question",
+        "position": 439,
+        "token_id": 13,
+        "token_piece": "."
+      },
+      {
+        "kind": "question",
+        "position": 440,
+        "token_id": 57622,
+        "token_piece": "ĠAllowed"
+      },
+      {
+        "kind": "question",
+        "position": 441,
+        "token_id": 1894,
+        "token_piece": "Ġcolor"
+      },
+      {
+        "kind": "question",
+        "position": 442,
+        "token_id": 5036,
+        "token_piece": "Ġnames"
+      },
+      {
+        "kind": "question",
+        "position": 443,
+        "token_id": 25,
+        "token_piece": ":"
+      },
+      {
+        "kind": "question",
+        "position": 444,
+        "token_id": 2518,
+        "token_piece": "Ġred"
+      },
+      {
+        "kind": "question",
+        "position": 445,
+        "token_id": 18575,
+        "token_piece": "Ġorange"
+      },
+      {
+        "kind": "question",
+        "position": 446,
+        "token_id": 13753,
+        "token_piece": "Ġyellow"
+      },
+      {
+        "kind": "question",
+        "position": 447,
+        "token_id": 6176,
+        "token_piece": "Ġgreen"
+      },
+      {
+        "kind": "question",
+        "position": 448,
+        "token_id": 6303,
+        "token_piece": "Ġblue"
+      },
+      {
+        "kind": "question",
+        "position": 449,
+        "token_id": 24932,
+        "token_piece": "Ġpurple"
+      },
+      {
+        "kind": "question",
+        "position": 450,
+        "token_id": 18217,
+        "token_piece": "Ġpink"
+      },
+      {
+        "kind": "question",
+        "position": 451,
+        "token_id": 13876,
+        "token_piece": "Ġbrown"
+      },
+      {
+        "kind": "question",
+        "position": 452,
+        "token_id": 13,
+        "token_piece": "."
+      },
+      {
+        "kind": "prompt_other",
+        "position": 453,
+        "token_id": 151645,
+        "token_piece": "<|im_end|>"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 454,
+        "token_id": 198,
+        "token_piece": "Ċ"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 455,
+        "token_id": 151644,
+        "token_piece": "<|im_start|>"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 456,
+        "token_id": 77091,
+        "token_piece": "assistant"
+      },
+      {
+        "kind": "prompt_other",
+        "position": 457,
+        "token_id": 198,
+        "token_piece": "Ċ"
+      }
+    ]
+  },
+  "layout": {
+    "attention_query_positions": [
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452,
+      457,
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467
+    ],
+    "first_answer_predictor_position": 457,
+    "full_length": 468,
+    "generated_attention_rows": [
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58
+    ],
+    "generated_length": 10,
+    "generated_positions": [
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466,
+      467
+    ],
+    "image_positions": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      388,
+      389,
+      390,
+      391,
+      392,
+      393,
+      394,
+      395,
+      396,
+      397,
+      398,
+      399,
+      400,
+      401,
+      402,
+      403
+    ],
+    "predictor_attention_rows": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57
+    ],
+    "predictor_positions": [
+      457,
+      458,
+      459,
+      460,
+      461,
+      462,
+      463,
+      464,
+      465,
+      466
+    ],
+    "prompt_length": 458,
+    "question_attention_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "question_positions": [
+      405,
+      406,
+      407,
+      408,
+      409,
+      410,
+      411,
+      412,
+      413,
+      414,
+      415,
+      416,
+      417,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      428,
+      429,
+      430,
+      431,
+      432,
+      433,
+      434,
+      435,
+      436,
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444,
+      445,
+      446,
+      447,
+      448,
+      449,
+      450,
+      451,
+      452
+    ]
+  },
+  "performance": {
+    "elapsed_seconds": 5.217008113861084,
+    "peak_gpu_allocated_bytes": 9267371520,
+    "peak_gpu_reserved_bytes": 9504292864
+  },
+  "run_config_sha256": "901ddae2ac2ec4b9cd11d598b02110395b2a4ce524eb27b8b89a44822c5f855a",
+  "sample_id": "case_05_straight",
+  "schema_version": "1.1",
+  "score": {
+    "correct_prefix_colors": 8,
+    "exact_match": true,
+    "expected_colors": [
+      "blue",
+      "yellow",
+      "purple",
+      "brown",
+      "green",
+      "orange",
+      "red",
+      "pink"
+    ],
+    "format_valid": true,
+    "predicted_items": [
+      "blue",
+      "yellow",
+      "purple",
+      "brown",
+      "green",
+      "orange",
+      "red",
+      "pink",
+      "end"
+    ]
+  },
+  "status": "complete",
+  "storage": {
+    "categories": {
+      "decoder_attention": {
+        "file_bytes": 54433944,
+        "files": 36,
+        "tensor_bytes": 54374400
+      },
+      "decoder_attention_summary": {
+        "file_bytes": 331920,
+        "files": 36,
+        "tensor_bytes": 271872
+      },
+      "decoder_hidden": {
+        "file_bytes": 175038350,
+        "files": 73,
+        "tensor_bytes": 174919680
+      },
+      "logits": {
+        "file_bytes": 12158118,
+        "files": 2,
+        "tensor_bytes": 12154880
+      },
+      "merger_hidden": {
+        "file_bytes": 21311220,
+        "files": 8,
+        "tensor_bytes": 21299200
+      },
+      "token_ids": {
+        "file_bytes": 5303,
+        "files": 1,
+        "tensor_bytes": 3744
+      },
+      "vision_embedding": {
+        "file_bytes": 8195005,
+        "files": 2,
+        "tensor_bytes": 8192000
+      },
+      "vision_hidden": {
+        "file_bytes": 157358520,
+        "files": 48,
+        "tensor_bytes": 157286400
+      }
+    },
+    "file_bytes": 428832380,
+    "tensor_bytes": 428502176,
+    "tensor_files": 206
+  },
+  "tensors": [
+    {
+      "category": "logits",
+      "dtype": "torch.float32",
+      "file": "tensors/generation/raw_logits.pt",
+      "file_bytes": 6079038,
+      "name": "generation/raw_logits",
+      "sha256": "8ab8339d32f8fa3103e154c99231e8c38d6c737b426a4e399052cb5a2fac4532",
+      "shape": [
+        10,
+        151936
+      ],
+      "tensor_bytes": 6077440
+    },
+    {
+      "category": "token_ids",
+      "dtype": "torch.int64",
+      "file": "tensors/generation/token_ids.pt",
+      "file_bytes": 5303,
+      "name": "generation/token_ids",
+      "sha256": "aa64913a3f2a47eb9766c27c43f0f48755b77f9e590ae4b7a16555f8c471d557",
+      "shape": [
+        468
+      ],
+      "tensor_bytes": 3744
+    },
+    {
+      "category": "vision_embedding",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/patch_embed/input.pt",
+      "file_bytes": 4916699,
+      "name": "vision/patch_embed/input",
+      "sha256": "81e3a94ecb056200309a393ece332e7d5ede0222ab49b1bdbf78ac8fc087ce90",
+      "shape": [
+        1600,
+        1536
+      ],
+      "tensor_bytes": 4915200
+    },
+    {
+      "category": "vision_embedding",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/patch_embed/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/patch_embed/output",
+      "sha256": "492a0bac97dfefe675cccd3c9f736c62e7714c737a904f055b76409e12022123",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_000/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_000/input",
+      "sha256": "a1b8ecf97d71556dd0716efb81f2c263bcc4730fde9d8e1ea95ae23be11a7f43",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_000/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_000/output",
+      "sha256": "8a5f807f82fbb5219889db72701c3dd14839afdfcc18e73a69d22fbf5d898f99",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_001/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_001/input",
+      "sha256": "276dc8efb13affeed4adf68b7b926772976ef51d89fa315e4cd8bce67f44c079",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_001/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_001/output",
+      "sha256": "8043a808371a25e2d017eae6c16b2bb156a1b485acd0d8afd18cd68fb8fb165b",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_002/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_002/input",
+      "sha256": "a3d9aa6ef5b87f72bc7136bfa191f400ecbe125d15f38fe016030e97b13667bc",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_002/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_002/output",
+      "sha256": "b835712688a56d773477a046ef9bfd88a9f414279e27e2bea6bdc046d90f00ca",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_003/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_003/input",
+      "sha256": "608a1a77a8265ddcae30b9b56ee7a35cd4be5ecaedc210d6da0ebf7f774a2cbd",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_003/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_003/output",
+      "sha256": "9635e1ab113bd27afc514a90ce5ead05c3b3d49b0c3970a665ce3995fe37b72c",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_004/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_004/input",
+      "sha256": "cb3939950da7e5a37b59707267915eb6604b9bf3c80e3ff54e75e6f82e511114",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_004/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_004/output",
+      "sha256": "fb4d5be322b17728293b025d2be30ac1bcd87ae504416da4dda38df912e0c9a1",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_005/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_005/input",
+      "sha256": "e9dd9ebf3bda2beb6b25ef2952026bc45ab5244147078d1b64ac6c60cc0c4d07",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_005/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_005/output",
+      "sha256": "db93e1201a847b298e0b8d3dff921be8065e2ee7fd4d8cc5c3938d0ed4cc0066",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_000/input.pt",
+      "file_bytes": 3278299,
+      "name": "merger/deepstack_000/input",
+      "sha256": "f06d0fd69563e13067a56f75ce8b29c2024d839cdc13c0396b983ec6d95cb0c5",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_000/output.pt",
+      "file_bytes": 2049506,
+      "name": "merger/deepstack_000/output",
+      "sha256": "549726aa0f02db08cc8a7c7433c36d021d29323bb4813114c6db7fe014212637",
+      "shape": [
+        400,
+        2560
+      ],
+      "tensor_bytes": 2048000
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_006/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_006/input",
+      "sha256": "f06d0fd69563e13067a56f75ce8b29c2024d839cdc13c0396b983ec6d95cb0c5",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_006/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_006/output",
+      "sha256": "ee99c7b41dd621b37e4ab7be23be786602a61fb4e633ff992220792c0eb17906",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_007/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_007/input",
+      "sha256": "8fa859390a1eb43d56c1463bb66f43d864ed6df2ed7f3bff1b4f0620f6633e33",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_007/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_007/output",
+      "sha256": "68ade9aab24ba68df5877d4861138a0e56d633b283ab135976fa3c8343379410",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_008/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_008/input",
+      "sha256": "8fcbe1bb40aa3ef45784b3a201f1b8c60dd1a714f9d07140ee25247c324f0ad1",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_008/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_008/output",
+      "sha256": "cfb5971c30c43eb156f9b2954200f8b51461a18cea3ed93d98b40fd58a8a0b64",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_009/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_009/input",
+      "sha256": "abc2b9a646a8c9604ae5df40f4f05feeb705ba07e80c4f5783ba18c33af95919",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_009/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_009/output",
+      "sha256": "95587dddfa841429422864b528d68f8129c411fd345175c97a3f6f909b2fc1ed",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_010/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_010/input",
+      "sha256": "fd313934791748f205637f6cf3858f3003dceaacc38334a55918c5345fe2c0c7",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_010/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_010/output",
+      "sha256": "9a7c34d6513d76eeb6c516b6604326d60ee031fa9ec7d68767b82b4324661d06",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_011/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_011/input",
+      "sha256": "a6a5aec481dd06b4ed29e9b20d411e3f01a8ceaf71cec4628bff6a4812c9704e",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_011/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_011/output",
+      "sha256": "3e979f9014265d8c21f4270e8a0342342d98e39e9dcd9f6a972cbf49cf29959c",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_001/input.pt",
+      "file_bytes": 3278299,
+      "name": "merger/deepstack_001/input",
+      "sha256": "07261161fc766172a5e6a96f6a983ac348b81c27a9dbfe6d95a0bd308243d332",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_001/output.pt",
+      "file_bytes": 2049506,
+      "name": "merger/deepstack_001/output",
+      "sha256": "c71dc3f7e24c6bfce02fdfc8762cc4f5a98be04298a5a408ae9648a601e9f92c",
+      "shape": [
+        400,
+        2560
+      ],
+      "tensor_bytes": 2048000
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_012/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_012/input",
+      "sha256": "07261161fc766172a5e6a96f6a983ac348b81c27a9dbfe6d95a0bd308243d332",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_012/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_012/output",
+      "sha256": "b4c029812a65329c22751e0053c84c2e9fb7b39e1f7d6990f42368026ffd3dd6",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_013/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_013/input",
+      "sha256": "d636c9ab5b4c3b8701efbc1da6d4ab69471fa3143056b8caa4c9151e410fcd90",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_013/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_013/output",
+      "sha256": "9944ba0d066a324cda18304e2e1308317b5b1cb08a2c3a7f4f32456ddcaaad76",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_014/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_014/input",
+      "sha256": "6ff6cd174060ec7010207bacdf607be02961c307d93c98ea04386cafdb170b66",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_014/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_014/output",
+      "sha256": "8fe4c5caa95e8ef3dca9b2e20fa245318b8a7a34fa4492acaa03c081eba8784b",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_015/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_015/input",
+      "sha256": "7f70c2fc80df3cbeb8e3fb214f85d23802a4617d915a9850198ef4b4409d6b35",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_015/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_015/output",
+      "sha256": "1e959f8f41852c21b4c2cea6aadd252de42805c39e5811e9afb8b65d9958de07",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_016/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_016/input",
+      "sha256": "ad4ab953ec5337810f04f9c82ee85a64f7d4af73b1f8c5f96797a318a173920c",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_016/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_016/output",
+      "sha256": "8ebdf875219f132931a70bf682c1fcd2a666230248c254a0955e6292baf4c7c4",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_017/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_017/input",
+      "sha256": "9b12c7c22e0907f6239ee22606607fffd20239c6bd4bc53f21839b428b54374c",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_017/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_017/output",
+      "sha256": "64c85d45195367c6c1fa077645660a32e76d84acd86d6f914ffd8ee3bd5ee669",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_002/input.pt",
+      "file_bytes": 3278299,
+      "name": "merger/deepstack_002/input",
+      "sha256": "25fce6ab33273368d19d7ce2248b52353f453d9cc775dfceab10c298b2325ac6",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/deepstack_002/output.pt",
+      "file_bytes": 2049506,
+      "name": "merger/deepstack_002/output",
+      "sha256": "cb270edcbb615dda89ab6a1a4567e4edfbcecaae3673af2c4c7a6e3c75f605fe",
+      "shape": [
+        400,
+        2560
+      ],
+      "tensor_bytes": 2048000
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_018/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_018/input",
+      "sha256": "25fce6ab33273368d19d7ce2248b52353f453d9cc775dfceab10c298b2325ac6",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_018/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_018/output",
+      "sha256": "33c1ab47dcb85b3f9313f907605737dbe63bada51ca0e988fc0dfd9198465f95",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_019/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_019/input",
+      "sha256": "430f9ce2374f5564f13d5973bfb70880ce9c2a0fd2fa25c4597b84af04494f3f",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_019/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_019/output",
+      "sha256": "bf36f9e377af6ad919b8c21eb5e684686ea8ea282ffa55146447cb8dd15e0a7a",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_020/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_020/input",
+      "sha256": "37d45e40c67f61158ae0ed3349a6e771f354b56b2e9cc3d76e5dfcfd06be62e5",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_020/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_020/output",
+      "sha256": "1681e886672c17eb759d0c9e511ba46e9d3b3f6af259fa875e113e1bec129205",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_021/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_021/input",
+      "sha256": "8d67b919485e61ca114fadb4fc4b340587b2894ecaad4447d773079796146858",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_021/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_021/output",
+      "sha256": "160bed6a264d503ed23079501678f3ad28e012247d318af95d6cb9b6067f7fe2",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_022/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_022/input",
+      "sha256": "55724984ac7e2bca5a2547fc5ddffa501fdd3c45c05e01c8036ad0fcfdde112a",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_022/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_022/output",
+      "sha256": "9d50eb313cc6be73b66af3a637fa2a5bae37870c69e2eb15d0e1d8dfe42f0739",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_023/input.pt",
+      "file_bytes": 3278299,
+      "name": "vision/block_023/input",
+      "sha256": "65cae581e7ed684b3757dd6219dea41279936e48c73bf535acb986551270b3bf",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "vision_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/vision/block_023/output.pt",
+      "file_bytes": 3278306,
+      "name": "vision/block_023/output",
+      "sha256": "262f20971523d4d65bd4a7bcae5824841c1458252bec552d78ee29624a85973a",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/final/input.pt",
+      "file_bytes": 3278299,
+      "name": "merger/final/input",
+      "sha256": "8a8e50b96f367abfd578f2c274e58a2d5512ba9153b9e035c7329da22a284c7e",
+      "shape": [
+        1600,
+        1024
+      ],
+      "tensor_bytes": 3276800
+    },
+    {
+      "category": "merger_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/merger/final/output.pt",
+      "file_bytes": 2049506,
+      "name": "merger/final/output",
+      "sha256": "e7fc0c6dd212b3845a00d497fcf2d693c68192b89e0ce31c34d2d6961890fc88",
+      "shape": [
+        400,
+        2560
+      ],
+      "tensor_bytes": 2048000
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_000/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_000/input",
+      "sha256": "eb4f08a66d99c5696b211f33859fe90b2a5a3b8a9efd7b403b2610d372ead8a3",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_000/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_000/attention_to_image",
+      "sha256": "47a459ecce7d2d138fa0303e0a5b6ed155c96bd2580947198a964ce649a0801d",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_000/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_000/attention_image_mass",
+      "sha256": "c57caa9dcfb1c211e91914352c3cc6165131e340f3bc4b2c81a9405b02810f0d",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_000/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_000/output_before_deepstack",
+      "sha256": "49638c14da143191337c87990163a70f6d4ff6f0b10a18ee5e178e654d7f141d",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_001/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_001/input",
+      "sha256": "368e6fb0016def00e481e9f5d99520a85e820a2ce74364709d2b3d4cc057cd37",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_001/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_001/attention_to_image",
+      "sha256": "7778252cf44fcb38f229516bae34a93aa16769799a5fb7cf3504e286bb6efacf",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_001/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_001/attention_image_mass",
+      "sha256": "2bafddf198bee47cc217371f125e68ed7d9b108c1f9950af04119e8ce5c13425",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_001/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_001/output_before_deepstack",
+      "sha256": "0e4ad4dee7003f236fb4c9d7447899d03838322184f6adff2c8169c6365ac5f4",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_002/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_002/input",
+      "sha256": "63fcb1531e5ccffb2c5f596641641f9c59602218263d5dde06b540053dc00ef8",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_002/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_002/attention_to_image",
+      "sha256": "a1dcb001e4c398087bf0efd0df78291d0f203e0523dbe63e87940bb5ef7077ea",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_002/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_002/attention_image_mass",
+      "sha256": "7804e6aa5cae55fd1a0c4d1f193150811a06588ab6f4e98debcfe7c604569ccf",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_002/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_002/output_before_deepstack",
+      "sha256": "ac2976f99f6fb4c131d72688b1436eea9f9320c85d3094926fb85536f08a7179",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_003/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_003/input",
+      "sha256": "8b84db8c8510ede44cfd8eb8c17d51572565b368078317e75226d6c23888f472",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_003/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_003/attention_to_image",
+      "sha256": "945612f1825ede358ec9ccd78c3e87ae6faf5414a2260d933be41750496fe79f",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_003/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_003/attention_image_mass",
+      "sha256": "1a8fd9092976f744c0224e351d12742cd0548ad63a617caadae9763811a21255",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_003/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_003/output_before_deepstack",
+      "sha256": "eb3bb90c11aa8b7454f154490f389994c5b5526a24cf505cb9bb50f58131154d",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_004/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_004/input",
+      "sha256": "13b7aed80f8d45409225a50d20ad1ea651478a353e6ba31f0a8ee69ff8f652ac",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_004/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_004/attention_to_image",
+      "sha256": "206ee9824ffbabe668c55fe3ee0aa151eb97bdf9c93df0d6ac87b6f982bedb3a",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_004/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_004/attention_image_mass",
+      "sha256": "6ee12994ac039060232f4b1d25f200e5a1579064f3adf04e08c25de1606e9622",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_004/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_004/output_before_deepstack",
+      "sha256": "ff4048cc478a05805e55a983e84953bbb9dae1228ace396b92f971aff0cbc618",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_005/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_005/input",
+      "sha256": "c2688844c2e6615c964cb5d032091f66fe7e0758fe28033326537e93fb6b72d6",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_005/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_005/attention_to_image",
+      "sha256": "15501facad3fc82bed8742cb21310cc2078db2809a74c6c131fb282a3d1333db",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_005/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_005/attention_image_mass",
+      "sha256": "abce0b3ca005607c670c716f89bd2c64f01c7714daa31100e33c2077170ac52a",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_005/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_005/output_before_deepstack",
+      "sha256": "8f4176f02d597e6c0e9dacc677e3c8fab63e8d0a23b8baec40e77801919a7cd6",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_006/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_006/input",
+      "sha256": "5b89dffee69661c0407b2a3a4c99c7915ecdaa356c0681e9b964fc7aaa6cecb7",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_006/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_006/attention_to_image",
+      "sha256": "7a9e4830f617ce4f1a54f3a807f13a9698bc96151d8c2ed0ff4b21c6c0521821",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_006/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_006/attention_image_mass",
+      "sha256": "f0dc8fb4432d42b4048cc3467e1cc8a100433a6ac95e1c33f0cadcc7a9ed823c",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_006/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_006/output_before_deepstack",
+      "sha256": "a7d2baa8996f43d485057f8641e1fd9169fa10df8ef3f65ad1930a154b0999f5",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_007/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_007/input",
+      "sha256": "ab5672bbde8526879a4ccc3b0d6c80963c6143d1d719d9c17ef146d8cc045114",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_007/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_007/attention_to_image",
+      "sha256": "641217ffdb17f3f8cbc88dfb741f58a3ba3883773899c7f86c38e9ce331253f9",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_007/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_007/attention_image_mass",
+      "sha256": "8d3c5c311e6502784903da8664274abf77725e354ad9c07d5cec54e5758c2401",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_007/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_007/output_before_deepstack",
+      "sha256": "40b3be64ff60c35c4b6a355211b83bed98f53f5172f859d738f34edb9ae2f5ac",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_008/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_008/input",
+      "sha256": "5eb702d377b24058b8f2fc0e964978fc7bb34174670820e1c415e803a095be4b",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_008/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_008/attention_to_image",
+      "sha256": "981cdcdf20f596689ad6235ff31d22708703a22e7019894eff7343a710cd53c8",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_008/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_008/attention_image_mass",
+      "sha256": "27760d472146bb787a6cb096e6dcaeba83f2481990a329da7f708822673b934b",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_008/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_008/output_before_deepstack",
+      "sha256": "39b2868e7c48c0d8ff87b1593d83422bf00a6bb5d6f16395f07b92b064aae3a4",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_009/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_009/input",
+      "sha256": "dcabf9de6cd31474147632b95ca6647a8c191743baa874e52a75e3d26368a471",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_009/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_009/attention_to_image",
+      "sha256": "bd1c8f3f0acd3e3792be2f46c9976b0896773296cf76f809697b5a6d4339b089",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_009/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_009/attention_image_mass",
+      "sha256": "b1051009ad2ca8f87a279098e8c016831578cd3a64324d27f76b873def6d80cd",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_009/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_009/output_before_deepstack",
+      "sha256": "df574c7b4b121d9964c84f30138ff1dea032612d8882757908bdf70a7ac4d0f5",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_010/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_010/input",
+      "sha256": "ee230dc6629b7f363f28f37d2bdc319d1b00c47756c6c5c1fa30b8ba5416ffe8",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_010/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_010/attention_to_image",
+      "sha256": "30117d2714fe8695c10823ec6e941d615a69c63dc95ae87a9d183dcf79199918",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_010/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_010/attention_image_mass",
+      "sha256": "99b0a71d9bac52efa0eaf4ade9de32c00133ce7f92215dfe7f86ca1975c604e4",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_010/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_010/output_before_deepstack",
+      "sha256": "78ea0c740150efaeafcd88fa10591cae963703a6f7bc9e75215056270e05cbd4",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_011/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_011/input",
+      "sha256": "617fefaaeb9f84ded86cb259e690636a9a41e7a963971e5ccc6843d70e98fd2d",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_011/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_011/attention_to_image",
+      "sha256": "c1ae9697d94df614d7bb46b93387a494f2039180a020627d451e45c32a95a559",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_011/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_011/attention_image_mass",
+      "sha256": "f4e9d4e87c1deea2f50914ce9ce7387068592715fd0b2dc0de5c31b01dc62360",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_011/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_011/output_before_deepstack",
+      "sha256": "3518209dc4d77962535afc9dba4472a4269d7d46a0ab30fbd2b47e6511972d98",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_012/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_012/input",
+      "sha256": "3668cd2b86dc1e1b6040e92e6fa71a23f6c2f9d87abc8cb2225cfd8254778291",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_012/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_012/attention_to_image",
+      "sha256": "6b07449fc39974cdecbfb74d308e2d7ed9c197dfd92b32daa3a8cd20721a1ca5",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_012/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_012/attention_image_mass",
+      "sha256": "b16908951a608a46fa0d7655fd70c08c8663f22ac783fc12fe7d855e9d5e6270",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_012/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_012/output_before_deepstack",
+      "sha256": "42fa6b40c5a26da99c721567cb992306b837b76a7a7b748319f2c33e9bbaf70d",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_013/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_013/input",
+      "sha256": "0e90e794ae8fa39134025333d40eea0ea7f33f1d41e6cfeb23bfc0e6d9dfe0c8",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_013/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_013/attention_to_image",
+      "sha256": "dd3c68e3664c9f7370a31f50b6523c863308412549d908113e18805a10478d47",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_013/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_013/attention_image_mass",
+      "sha256": "ec3a5db330101be43bc706a4d420a0fd99df8821abae87afadb09bef31f95ad6",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_013/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_013/output_before_deepstack",
+      "sha256": "387cf29eb072983d5cabbb2b13fe053c7d888757ee810ec62d5a1cabc142ce5e",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_014/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_014/input",
+      "sha256": "c46c8d13c4f34961ee6c74f44412e11300fdafa75635b386152741bdffafcc91",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_014/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_014/attention_to_image",
+      "sha256": "453a3b91d08473d8f6898be79e9bb19985576a426632f291d34a4169d3f16a78",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_014/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_014/attention_image_mass",
+      "sha256": "e0f6029464cd5b9d4fcff9722b749483029cf9a8d5b6c5a77078d697073ed4fe",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_014/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_014/output_before_deepstack",
+      "sha256": "afdfe73b91aaeaaef0e0e1e5bc27f27c96cd03fe3cc87030669186a5dbf943e1",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_015/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_015/input",
+      "sha256": "568ae335729dfab700cd6159547ecfbbae152969de8ce13dbd0a55c49d181b90",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_015/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_015/attention_to_image",
+      "sha256": "257f4bad9ea4aa4d29c3f4f4d4f4fb8bf2bf5901e780d45846badaa04a4be7af",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_015/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_015/attention_image_mass",
+      "sha256": "d020f2c254f5fd074f8af3825646faec2e8210945cd53b3bb1082c8850dd6aca",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_015/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_015/output_before_deepstack",
+      "sha256": "13963cde8333a069643c45e1f4d8d1d7b3d03d53ebbd13a8f968d5a6f82eb127",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_016/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_016/input",
+      "sha256": "69bc4132f4cf83130c22a106b1b4c84ec86d43cf2dbaaee3f03db76fa1cee2f3",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_016/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_016/attention_to_image",
+      "sha256": "f3fe1258bdb89dc4d39b3035425a39cb6047866dc7f38a47f3578497695d4464",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_016/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_016/attention_image_mass",
+      "sha256": "b6dbb174e8d52418ef83fd1ae72669b999b2aa62960ff71062facde70de01f87",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_016/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_016/output_before_deepstack",
+      "sha256": "cba082432bda7bb3a637108a0d62f08cc2a1a5d9504020f6baf970d1f00c2e05",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_017/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_017/input",
+      "sha256": "4a420ec13c4112aeed6f58c007c11adcf3516ccaea53a2a84e0a0f33708a2c19",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_017/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_017/attention_to_image",
+      "sha256": "7670ddd9df5fd734bc7be9cefb23347825a62dd2ae0be39e1b18bf927723846a",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_017/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_017/attention_image_mass",
+      "sha256": "5c8cd3a045f1e4c1a6da3e10df6a9a6787b522aafb372c16b736d126c47c868c",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_017/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_017/output_before_deepstack",
+      "sha256": "2b1b12dccb7f60016bac556fca48673c4adb47b9be59d9504ffaa522a6342a07",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_018/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_018/input",
+      "sha256": "2b9cfaeb3d3f4576199b694c348c21747e5c66e4fe3a22230b6f6f90f57227b2",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_018/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_018/attention_to_image",
+      "sha256": "78df611d06c6a70ec1c27abe4b7f5ca28a2c1ee0a1c8289e3033182c4339920e",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_018/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_018/attention_image_mass",
+      "sha256": "107948fa1e21f9a4ddd7801284729ee1c5757276e3bee746e871da47a7213953",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_018/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_018/output_before_deepstack",
+      "sha256": "a3c06d1d2e2872e876f5e5b222cf0c7c7957f3e12e5b225d437ce70d37feedac",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_019/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_019/input",
+      "sha256": "4bde0e59dd4b987b65d234ab121dc91fc5dc3852bec8fafca15a5c2f08954d01",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_019/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_019/attention_to_image",
+      "sha256": "b87b1506df29d7d91ba021f6c3691a37a125d65f76441c80a808812d012b73a6",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_019/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_019/attention_image_mass",
+      "sha256": "fe032c7f8a1c4397b5b50f29da39c116f124788df7bdeeb3be00c212f07fc51d",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_019/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_019/output_before_deepstack",
+      "sha256": "8ee5f2a8e80d2a51f360310365f6b84b17056c284ddd38b28e965f7a2507432e",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_020/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_020/input",
+      "sha256": "8f1755f135c966430998a8ecda9b5fee5e574452015d618736c2070edd91928b",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_020/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_020/attention_to_image",
+      "sha256": "486b8da99104dd4c2ad69da3c0f5adf97de71f78aff25352f50cf7693bccb7b2",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_020/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_020/attention_image_mass",
+      "sha256": "a58f98b514d5850a493fd67f5b4988e21cbca9efe0272eb90f85dcc412a33ba2",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_020/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_020/output_before_deepstack",
+      "sha256": "4cb9d99a36177ca8335846ebf447fa4f83bfec541c0d99e4b614b9b33a09814e",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_021/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_021/input",
+      "sha256": "83e3f1267e9f7438a54f3aa7c6027bd19dfa24f7c5f686e1873d00ced2255bcf",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_021/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_021/attention_to_image",
+      "sha256": "526623886d2f92941e689b38bbb88d269009c5992269b3cdf45e76049adffa0e",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_021/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_021/attention_image_mass",
+      "sha256": "82d94d063f8cc8384272023b2bdd8660473ddf300e44d72b7918620ef8becdac",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_021/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_021/output_before_deepstack",
+      "sha256": "de7a93176521ad2b547630f91b30b7622ce949ac945fbc79225dc85b659322c7",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_022/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_022/input",
+      "sha256": "b49f9a9a717a17d3bd77f80190e5c37147e69ccce85f474b19194d6908a4b6be",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_022/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_022/attention_to_image",
+      "sha256": "346657048aac202099c199689f3d86626cedacd9672a8d2be1fe957e0bfb4483",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_022/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_022/attention_image_mass",
+      "sha256": "6a37b7567b798af273cc4c14c40ba904de1a6798740de2241706d2ce27497409",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_022/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_022/output_before_deepstack",
+      "sha256": "ad665aa68e430c97aa56c4a374c1a856fb089e9d53e7038d65e5f1422309ac3c",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_023/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_023/input",
+      "sha256": "3bd39582464fd9e188999b26b27110aff5771ddbd23732279e884c37c289a3d3",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_023/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_023/attention_to_image",
+      "sha256": "5f6c4d8f8648c871abac7c7532e48ff24d8dad5b29e7ce9377b69285fc145243",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_023/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_023/attention_image_mass",
+      "sha256": "5898d2f7bbe8e18d446795f83f1a44168ea8a7c6a2a7c28428296eed4a8de94f",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_023/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_023/output_before_deepstack",
+      "sha256": "ec21c336da4acbdaae465d1bb74d1aa2c8ea8e619b4008d11fc236e69f84ce0a",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_024/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_024/input",
+      "sha256": "3485d33f2d6bdc8a2a8724abce1fe24631660f4c4f0006e639cbc80c4568ae87",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_024/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_024/attention_to_image",
+      "sha256": "1e9d39c2153734e6c8f160d13f80982bd5f14d8560956cf4592acadd377d9797",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_024/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_024/attention_image_mass",
+      "sha256": "dd16be4025898098c5c34b045e7d4076eb0e40ecc8fd6cfa07b64f9653cde30f",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_024/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_024/output_before_deepstack",
+      "sha256": "a1e04d910733b26641486886049d83ebf672f56afa0f03c087071c4837a7b657",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_025/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_025/input",
+      "sha256": "82f6cb4137c9132950f5a2e26872db655f622d803cdd144baf5163acfa12db26",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_025/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_025/attention_to_image",
+      "sha256": "628cfa5093984122d9fd3008865b0a6ee28f2dd63f2faaf8c2228a5bfd33e586",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_025/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_025/attention_image_mass",
+      "sha256": "83ee7af0f936c418226a328c8afd5b3aad24a4dd6cf4a66fae5e311a0fcac94b",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_025/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_025/output_before_deepstack",
+      "sha256": "914645637965f0ca0d4d6396228c508bbc6e5dde23c531203ceeefe912d77d97",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_026/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_026/input",
+      "sha256": "febc8f0dc34ada08895518b711d9dd122bd4dfb084bf0e04c2e2b677f055eb37",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_026/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_026/attention_to_image",
+      "sha256": "f65724e09a8e0cc010e7af8f061f6e4ae9a725520212a12ea0f609461f3f146a",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_026/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_026/attention_image_mass",
+      "sha256": "4e77162403892561df66906195afea9237b8b3964d98b15cdedb45443dee8c41",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_026/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_026/output_before_deepstack",
+      "sha256": "c32f4fefba2cad3c85fe03a554e5863fe0edf26e6fb49a788d68827f2a1bfd46",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_027/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_027/input",
+      "sha256": "dd078ae816fd6ab76863dbc0e2b1a5ca7dfac15e6d40ca491d28b68ec89d2a9a",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_027/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_027/attention_to_image",
+      "sha256": "d46a57360609bf5ed35aa79de4153660955e1318d9aab1abf2d929804beacf54",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_027/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_027/attention_image_mass",
+      "sha256": "981f76f170b255f6982b84532bfb7ec53743344a98a464ce40091922e33275f6",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_027/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_027/output_before_deepstack",
+      "sha256": "f0a55bd3312750326919403f1b502f3ecf7b07af440639e724e0e7023b6e6eb1",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_028/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_028/input",
+      "sha256": "2dc6c557a38117e1848b84df8fecb6def851828741c25f1ae3c2d7e7c23caf6c",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_028/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_028/attention_to_image",
+      "sha256": "1809daf277448378db68f804fb5b454b001bf67f9d625e0b8a89a12e5efb9d78",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_028/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_028/attention_image_mass",
+      "sha256": "ec346489264e78d7bbbd192e33f499f504a474a8b8fd93b152a7ba82324ed89c",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_028/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_028/output_before_deepstack",
+      "sha256": "6701b8446bd961dbdc6f9562b9f60511e6fcb968af366dbef22e08e1ee3d8b65",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_029/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_029/input",
+      "sha256": "ed85b0ceb195bb01161a24fbaa7c2be6caf508bc4f4edc06ce7341dfb14158ac",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_029/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_029/attention_to_image",
+      "sha256": "d35bdc7179eab82f2f4bcc6bb8b52a9e81ab724fb23d9352a03b5f3535599784",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_029/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_029/attention_image_mass",
+      "sha256": "3e0ac2a52a5e5619a1a3fc6746df13f0afe77f3cf0b70c5f6083f34a68d9081e",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_029/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_029/output_before_deepstack",
+      "sha256": "494d1972913deaa7102989cb99ead13f4bfaa1b72a47475afc3314500b6e09ea",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_030/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_030/input",
+      "sha256": "b502d339d1fcc49afbe16ad7cdee38652af903deec7d4a2a8cf94f1b4b67c0aa",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_030/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_030/attention_to_image",
+      "sha256": "0b435b43b4eb95edf4563b7dba65f02c8f9403ce87407dfef94363fb0c03d9c7",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_030/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_030/attention_image_mass",
+      "sha256": "66354a37807e2739559a57dc08aac28657746500a5bb04a0f9209b6b0b6269e0",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_030/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_030/output_before_deepstack",
+      "sha256": "4e50b56471a508b15aaa6f83863a111309355d1904bbf35576870346ce8f4413",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_031/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_031/input",
+      "sha256": "3b2fe70f0bbb9c86f31e433ac0638761ba057fe8fd51e657cc03702f0b735726",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_031/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_031/attention_to_image",
+      "sha256": "5203a815ac93d345c11f1c33ae8b6b4173760c5f90e1b3cfab580303aab05515",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_031/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_031/attention_image_mass",
+      "sha256": "5063714ff41c28542d5ffbc37de529a6ee8c494d4d31b2c15bfbe25b11336a65",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_031/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_031/output_before_deepstack",
+      "sha256": "623d374235929add5b87867b8edc04148887c9a1d32dacb75731336521ff8157",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_032/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_032/input",
+      "sha256": "6721c37e4a2f1ebd66ef28735407741a56582203defaa2be013d79c9613bc70a",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_032/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_032/attention_to_image",
+      "sha256": "78b3b5df7e69172f86831b6aa7548ba38ab204b4a99b2358bb2fc291033bf95c",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_032/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_032/attention_image_mass",
+      "sha256": "571addf26921ef6646c294c449765cf88c6594026f8d2a72cefea5092d4ed5b9",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_032/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_032/output_before_deepstack",
+      "sha256": "459110d8720e3c5f3a80da4b0f023f9ed68b7f838dc06ab1e39dea8dd58c2d96",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_033/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_033/input",
+      "sha256": "06079d95ce831bc26bb658364d0aeb3d7ae5b5657f35a9a20b190892e40fddd0",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_033/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_033/attention_to_image",
+      "sha256": "abdaaebd15316393f5c2df99b393dc5de44b818a7e48ae142158c5cbf0d3b89b",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_033/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_033/attention_image_mass",
+      "sha256": "efa9fb5ab2b99b5d90f36434363de0c3ee33af3825f7aef31bb266c9353f029a",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_033/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_033/output_before_deepstack",
+      "sha256": "3e2e3a96b78b6f6d90cd85c01048feae753708ff8fbc5ec9022ed931b5bd28b0",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_034/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_034/input",
+      "sha256": "089bb4165ff8037b077ce652dc4640d391ceba41821c734de3235fca80a90009",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_034/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_034/attention_to_image",
+      "sha256": "e5b67e3bb35f80c61961850ee87b7c39e6a679aef0270249aea5e38c37cc6554",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_034/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_034/attention_image_mass",
+      "sha256": "603c9e50c1aee8973f3053adfacbef225d368e4c021fdc6b36abcab26c873d26",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_034/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_034/output_before_deepstack",
+      "sha256": "84824895e5e95022f068ea9c0d765e1a780e861800e83447450220ead455fee4",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_035/input.pt",
+      "file_bytes": 2397659,
+      "name": "decoder/layer_035/input",
+      "sha256": "56d05f7e64c1ef954903953d9d0d8c1731a6a2ef47dcd997610e2a1a61397363",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_attention",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_035/attention_to_image.pt",
+      "file_bytes": 1512054,
+      "name": "decoder/layer_035/attention_to_image",
+      "sha256": "aab8f057eab15ac89a8a82b155120fba9d139f1d4555897a0103b29c411727fd",
+      "shape": [
+        32,
+        59,
+        400
+      ],
+      "tensor_bytes": 1510400
+    },
+    {
+      "category": "decoder_attention_summary",
+      "dtype": "torch.float32",
+      "file": "tensors/decoder/layer_035/attention_image_mass.pt",
+      "file_bytes": 9220,
+      "name": "decoder/layer_035/attention_image_mass",
+      "sha256": "5d25f83fa983e46938440a4b7504eb27815a704fadfdadcb4a59dde6c77e0970",
+      "shape": [
+        32,
+        59
+      ],
+      "tensor_bytes": 7552
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/layer_035/output_before_deepstack.pt",
+      "file_bytes": 2397913,
+      "name": "decoder/layer_035/output_before_deepstack",
+      "sha256": "d3f0ba117505c0b05db4be4af76597c3593e4a35abe883d97bded17ca1180214",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "decoder_hidden",
+      "dtype": "torch.float16",
+      "file": "tensors/decoder/final_norm.pt",
+      "file_bytes": 2397758,
+      "name": "decoder/final_norm",
+      "sha256": "45100364eff6b54da7a39d94b1c74e4605e84c0cc2db6b5188891034a7412091",
+      "shape": [
+        1,
+        468,
+        2560
+      ],
+      "tensor_bytes": 2396160
+    },
+    {
+      "category": "logits",
+      "dtype": "torch.float32",
+      "file": "tensors/replay/predictor_logits.pt",
+      "file_bytes": 6079080,
+      "name": "replay/predictor_logits",
+      "sha256": "9b43008678d3356ab6b087c11802b9f047ecbaa5466e5a07d2ee5e46874dc05f",
+      "shape": [
+        10,
+        151936
+      ],
+      "tensor_bytes": 6077440
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "archive_count": 11,
+  "archives": [
+    {
+      "archive_path_prefix": "run002/",
+      "bytes": 563711,
+      "file": "run002_metadata.zip",
+      "kind": "metadata",
+      "sample_id": null,
+      "sha256": "1cfeef108a7917bdd5fae96abbe8cc16b88734345c7484b68b3a0611be8bdb4a",
+      "source_file_count": 39,
+      "tensor_file_count": 0,
+      "uncompressed_bytes": 5545140
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_00_curve/",
+      "bytes": 369353004,
+      "file": "run002_case_00_curve.zip",
+      "kind": "case",
+      "sample_id": "case_00_curve",
+      "sha256": "daab0c416dba8a94c6c3bfb1137f2488bdb5a4de509ba215a317736785fbf62e",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 424343219
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_01_straight/",
+      "bytes": 365532709,
+      "file": "run002_case_01_straight.zip",
+      "kind": "case",
+      "sample_id": "case_01_straight",
+      "sha256": "9bf218064ecb034f8c7afeef37416fd10db26de2d6a0986245b745ece7307d13",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 419301833
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_02_elbow/",
+      "bytes": 373107712,
+      "file": "run002_case_02_elbow.zip",
+      "kind": "case",
+      "sample_id": "case_02_elbow",
+      "sha256": "50b7cf1219f7b1f9edd4d35169aba5b08353b3998b935c0896337e0bbe6c20a4",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 429384504
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_03_swirl/",
+      "bytes": 373342077,
+      "file": "run002_case_03_swirl.zip",
+      "kind": "case",
+      "sample_id": "case_03_swirl",
+      "sha256": "83a45cd38dcc439874c6eb9843c2e9e780c525aba7d1891b093f611658a32075",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 429384579
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_04_curve/",
+      "bytes": 373247128,
+      "file": "run002_case_04_curve.zip",
+      "kind": "case",
+      "sample_id": "case_04_curve",
+      "sha256": "7feb458e0ff41af578dae71f6b2c78180f6af0ef86b4dacbb22b5e6badd4fc3a",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 429384636
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_05_straight/",
+      "bytes": 373092448,
+      "file": "run002_case_05_straight.zip",
+      "kind": "case",
+      "sample_id": "case_05_straight",
+      "sha256": "4ae7215b83e8998c9393a18147f33d8e85bc2b6c466147dcdba8847abd828fa3",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 429384546
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_06_elbow/",
+      "bytes": 369645232,
+      "file": "run002_case_06_elbow.zip",
+      "kind": "case",
+      "sample_id": "case_06_elbow",
+      "sha256": "df92c2068371cddecdd84c9595e66d8a1098f874785c9f98fe28d33c6bb5892a",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 424343244
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_07_swirl/",
+      "bytes": 369450563,
+      "file": "run002_case_07_swirl.zip",
+      "kind": "case",
+      "sample_id": "case_07_swirl",
+      "sha256": "0ce8b24b0c33ee9ba93f4868017e02791885eb038cf7e0d196e8446bb94c07e8",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 424343246
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_08_curve/",
+      "bytes": 365768981,
+      "file": "run002_case_08_curve.zip",
+      "kind": "case",
+      "sample_id": "case_08_curve",
+      "sha256": "29af90725ff01f01bffd513da8939f71f4752147cfb1c4e4e815d53921a90e0a",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 419301913
+    },
+    {
+      "archive_path_prefix": "run002/samples/case_09_elbow/",
+      "bytes": 373152493,
+      "file": "run002_case_09_elbow.zip",
+      "kind": "case",
+      "sample_id": "case_09_elbow",
+      "sha256": "6499a78624a9474da200820da72ca09a39c3032ec413522a912ca8edab2d5a25",
+      "source_file_count": 209,
+      "tensor_file_count": 206,
+      "uncompressed_bytes": 429384558
+    }
+  ],
+  "case_count": 10,
+  "collection_schema_version": "1.1",
+  "compression": {
+    "level": 1,
+    "method": "ZIP_DEFLATED",
+    "stream_chunk_bytes": 1048576
+  },
+  "expected_case_count": 10,
+  "expected_tensor_file_count": 2060,
+  "exporter_sha256": "933b2daa83cc6e2cb6b4e866b32e298af94cf07441ca483fb67a02439b443df9",
+  "maximum_archive_bytes_exclusive": 2147483648,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+  "model_revision": "70c41a926abfc92501c4a4da369a8d6312915b61",
+  "package_protocol": "qwen3vl_trace_case_zip_v1",
+  "restore": {
+    "contains_original_collection_logs": true,
+    "destination": "One common parent directory",
+    "overlap_note": "Case metadata appears in both archive types; overlapping files are identical.",
+    "result_folder": "run002",
+    "steps": [
+      "Verify every archive's SHA-256 against this manifest.",
+      "Extract the metadata ZIP and all ten case ZIPs into the same parent directory."
+    ]
+  },
+  "run_config_sha256": "901ddae2ac2ec4b9cd11d598b02110395b2a4ce524eb27b8b89a44822c5f855a",
+  "run_name": "run002",
+  "schema_version": "1.0",
+  "source_file_count": 2099,
+  "source_non_tensor_file_count": 39,
+  "source_tensor_bytes": 4253107416,
+  "status": "complete",
+  "tensor_file_count": 2060,
+  "total_archive_bytes": 3706256058,
+  "verification": {
+    "completed_sample_verifier": "collect.verify_completed_sample",
+    "source_hashes_checked_during_compression": true,
+    "source_inventory_unchanged": true,
+    "source_tensor_sha256_shapes_dtypes": true
+  }
+}

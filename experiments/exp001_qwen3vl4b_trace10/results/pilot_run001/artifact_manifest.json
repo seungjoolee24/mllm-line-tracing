@@ -122,5 +122,9 @@
   "scientific_status": "superseded_due_to_generation_default_inheritance",
   "intended_generation_mode": "greedy_search",
   "effective_generation_issue": "Transformers 4.57.1 inherited checkpoint do_sample=True because use_model_defaults was not disabled. Saved requested generation config does not establish effective greedy decoding.",
-  "usage": "Storage and hook plumbing pilot only; exclude from greedy baseline. All tensors passed integrity verification."
+  "usage": "Storage and hook plumbing pilot only; exclude from greedy baseline. All tensors passed integrity verification.",
+  "remote_status": "published",
+  "release_url": "https://github.com/seungjoolee24/mllm-line-tracing/releases/tag/exp001-pilot-run001",
+  "archive_download_url": "https://github.com/seungjoolee24/mllm-line-tracing/releases/download/exp001-pilot-run001/run001.zip",
+  "github_asset_digest": "sha256:e27bc7310799feeab901d12bbe240f9990bcdcaff65fec96e55dd8d6492c4616"
 }
