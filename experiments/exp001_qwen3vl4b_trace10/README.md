@@ -12,7 +12,7 @@
 - [분석 노트북](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/analysis_run002.ipynb): 저장한 run002 결과를 CPU에서 분석한다. 모델 가중치와 GPU는 필요하지 않다.
 - [정식 결과 요약](results/run002/run_summary.json), [용량 보고서](results/run002/size_report.json), [파일 manifest](results/run002_release/artifact_manifest.json)
 
-프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP의 GitHub 업로드는 중단했다. 원시는 현재 수집 Colab 런타임에 보존되어 있으며 같은 노트북에서 분석을 이어간다. 장기 보관은 사용자의 Drive로 옮길 계획이며, Drive 복사·검증은 아직 완료하지 않았다. 분석 노트북의 기본 경로는 Drive다.
+프로토콜 1.1로 10문제 모두 수집했고 정답은 9/10이다. case_03_swirl은 첫 색 뒤의 순서를 틀렸지만 수집과 생성 정렬 검증은 통과했다. 원시 tensor 2,060개는 4,253,107,416 bytes다. 원시 ZIP의 GitHub 업로드는 중단했다. 현재 수집 노트북의 마지막 백업 셀에서 전체 결과를 사용자의 Google Drive에 저장했다. 문제별 ZIP 10개와 메타데이터 ZIP 1개, manifest 1개를 복사한 뒤 마운트된 Drive 파일을 모두 다시 읽어 크기와 SHA-256 일치를 확인했다. ZIP 합계는 3,706,256,058 bytes(3.452 GiB)이며 원래 .pt와 메타데이터를 보존한다. 분석 노트북의 기본 경로도 이 Drive 폴더다. 이후 실행은 사용자가 셀별로 직접 진행한다.
 
 ## 실행 조건
 
@@ -82,3 +82,13 @@ Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 Z
 ## 현재 수집 세션에서 바로 분석
 
 [inspect_run002.py](inspect_run002.py)는 이미 존재하는 run002의 case_03_swirl과 case_07_swirl tensor를 CPU에서 읽는다. 모델 추론을 다시 실행하지 않고 층별 norm·cosine, 이미지 attention mass·조건부 공간 entropy, 기대/출력/직전 색 오브젝트 attention과 head별 비교를 기록한다. 출력은 results/run002_exploration에 저장하며 원시 수집 폴더는 수정하지 않는다.
+
+## run002 Drive 보관
+
+- 저장 경로: `MyDrive/mllm-line-tracing/experiments/exp001_qwen3vl4b_trace10/run002_artifacts/`
+- 완료 확인서: 같은 폴더의 `drive_backup_receipt.json`. 12개 파일의 크기와 SHA-256을 기록한다.
+- [현재 실행 노트북의 백업 셀](https://colab.research.google.com/drive/1SSCEgcNhHj0i3SgudJ_iMlPWyFLdiaRH#scrollTo=z66XUlmnXfel)은 `DRIVE BACKUP COMPLETE`로 완료했다.
+- [실행한 백업 코드](backup_run002_to_drive.py)는 이미 내보낸 `/content/run002_release`를 사용하는 이 세션용 셀이다. 원본은 삭제하지 않는다.
+- 복원할 때는 manifest를 검증하고 11개 ZIP을 같은 상위 디렉터리에 풀면 `run002/`가 복구된다. [분석 노트북](analysis_run002.ipynb)은 필요한 문제만 Drive에서 로컬 작업 폴더로 복원할 수 있다.
+
+이 검증은 Colab의 마운트된 Drive 파일을 다시 읽은 결과다. 현재 런타임은 연결을 유지하며, 백업 뒤 추가 분석 셀을 자동 실행하지 않았다.

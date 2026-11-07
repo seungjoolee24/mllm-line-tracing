@@ -10,10 +10,13 @@ MLLM(Multimodal Large Language Model)의 시각적 연속성 인지 능력을 li
 
 ## 작업 흐름
 
-1. Codex Pages에서 데이터셋과 실험을 기획합니다.
-2. 기획 내용과 구현을 이 GitHub 저장소에서 관리합니다.
-3. GPU가 필요한 실험은 이 저장소와 연결한 Google Colab에서 실행합니다.
-4. 실험 결과와 분석을 저장소에 기록합니다.
+1. 작업마다 저장소에 전용 폴더 하나를 만들고 기획·노트북·작은 결과 요약을 함께 관리합니다.
+2. Codex가 완성된 Colab 노트북을 먼저 작성·검증해 GitHub에 게시합니다.
+3. 사용자가 게시된 노트북을 내려받거나 Colab에서 열어 셀을 순서대로 직접 실행합니다. 명시적인 요청이 없으면 Codex가 Colab 수집·분석을 자동 실행하지 않습니다.
+4. 노트북에는 순서가 보이는 실행 단계, 명시적인 Drive 경로, 진행·성공·검증 출력과 중단 후 재개 기능을 포함합니다.
+5. 모든 원시 데이터는 사용자의 Google Drive에 보관하고, GitHub에는 코드·설정·manifest·작은 요약과 분석 결과를 기록합니다. Colab 임시 결과는 Drive 보관을 검증한 뒤에만 보관 완료로 처리합니다.
+
+상세 작업 규칙은 [AGENTS.md](AGENTS.md)에 있습니다.
 
 ## 단일 경로 생성기 v0
 
@@ -92,6 +95,6 @@ easy_v0/
 
 ## 활성값 수집 실험
 
-[Qwen3 VL 4B T4 실험](experiments/exp001_qwen3vl4b_trace10)은 고정한 10문제 중 첫 1문제만 실행해 이미지·질문·생성 토큰의 전 층 표현과 attention을 수집합니다. 실제 용량과 VRAM을 확인한 뒤 같은 노트북에서 나머지를 재개합니다.
+[Qwen3 VL 4B T4 실험](experiments/exp001_qwen3vl4b_trace10)은 이미지·질문·생성 토큰의 전 층 표현과 attention을 수집합니다. 정식 run002에서 고정한 10문제의 수집을 완료했으며, 결과 메타데이터는 [실험 결과 폴더](experiments/exp001_qwen3vl4b_trace10/results/run002)에 있습니다. 이후 작업에는 위의 사용자 직접 실행 흐름을 적용합니다.
 
 [활성값 수집 노트북을 Colab에서 열기](https://colab.research.google.com/github/seungjoolee24/mllm-line-tracing/blob/main/experiments/exp001_qwen3vl4b_trace10/activation_pilot.ipynb)
