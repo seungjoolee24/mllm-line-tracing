@@ -7,3 +7,7 @@ venv/
 .env
 .env.*
 !.env.example
+*.egg-info/
+/data/
+/build/
+/dist/

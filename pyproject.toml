@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mllm-line-tracing"
+version = "0.1.0"
+description = "Controlled single-line color-sequence generation for MLLM representation analysis"
+requires-python = ">=3.9"
+dependencies = ["Pillow==11.3.0"]
+
+[project.scripts]
+line-tracing = "line_tracing.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["line_tracing*"]
