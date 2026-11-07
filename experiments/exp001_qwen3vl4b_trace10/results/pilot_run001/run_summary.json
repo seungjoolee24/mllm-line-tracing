@@ -1,0 +1,95 @@
+{
+  "cases": [
+    {
+      "family": "curve",
+      "performance": {
+        "elapsed_seconds": 10.261691808700562,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9506390016
+      },
+      "sample_id": "case_00_curve",
+      "score": {
+        "correct_prefix_colors": 6,
+        "exact_match": true,
+        "expected_colors": [
+          "brown",
+          "yellow",
+          "green",
+          "orange",
+          "blue",
+          "purple"
+        ],
+        "format_valid": true,
+        "predicted_items": [
+          "brown",
+          "yellow",
+          "green",
+          "orange",
+          "blue",
+          "purple",
+          "end"
+        ]
+      },
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      }
+    }
+  ],
+  "completed_cases": 1,
+  "failures": [],
+  "intended_cases": 10,
+  "max_peak_gpu_allocated_bytes": 9267371520,
+  "max_peak_gpu_reserved_bytes": 9506390016,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+  "model_revision": "70c41a926abfc92501c4a4da369a8d6312915b61",
+  "run_config_sha256": "7231876e67480faef791464c8884aa467e37b4848fb78071aad37730afd79b53",
+  "schema_version": "1.0",
+  "selected_cases_this_invocation": 1,
+  "status": "partial",
+  "total_tensor_bytes": 423471248,
+  "total_tensor_file_bytes": 423801468
+}

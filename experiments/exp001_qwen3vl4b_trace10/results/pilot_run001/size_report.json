@@ -1,0 +1,131 @@
+{
+  "cases": [
+    {
+      "alignment": {
+        "collection_mode": "causal replay of actual greedy answer; not ground-truth teacher forcing",
+        "generated_token_logits": [
+          46.5,
+          53.75,
+          57.84375,
+          50.96875,
+          55.40625,
+          50.1875,
+          52.21875,
+          46.8125
+        ],
+        "generated_token_logprob": [
+          -2.0265558760002023e-06,
+          0.0,
+          0.0,
+          -1.1920928244535389e-07,
+          0.0,
+          -1.1920928244535389e-07,
+          0.0,
+          0.0
+        ],
+        "generation_mismatch_steps": [],
+        "generation_raw_argmax_matches_emitted": true,
+        "generation_top2_margins": [
+          13.75,
+          17.5625,
+          19.9375,
+          15.9375,
+          18.25,
+          16.59375,
+          21.8125,
+          19.6875
+        ],
+        "max_absolute_logit_difference": 0.125,
+        "replay_matches_generation_argmax": true,
+        "replay_mismatch_steps": [],
+        "replay_target_logits": [
+          46.5,
+          53.71875,
+          57.84375,
+          50.96875,
+          55.375,
+          50.1875,
+          52.21875,
+          46.84375
+        ],
+        "replay_top2_margins": [
+          13.78125,
+          17.5625,
+          19.9375,
+          16.0625,
+          18.1875,
+          16.59375,
+          21.84375,
+          19.765625
+        ]
+      },
+      "answer": "brown yellow green orange blue purple end",
+      "exact_match": true,
+      "expected": "brown yellow green orange blue purple end",
+      "generation_tokens": 8,
+      "performance": {
+        "elapsed_seconds": 10.261691808700562,
+        "peak_gpu_allocated_bytes": 9267371520,
+        "peak_gpu_reserved_bytes": 9506390016
+      },
+      "question_tokens": 48,
+      "sample_id": "case_00_curve",
+      "storage": {
+        "categories": {
+          "decoder_attention": {
+            "file_bytes": 52590744,
+            "files": 36,
+            "tensor_bytes": 52531200
+          },
+          "decoder_attention_summary": {
+            "file_bytes": 322704,
+            "files": 36,
+            "tensor_bytes": 262656
+          },
+          "decoder_hidden": {
+            "file_bytes": 174290830,
+            "files": 73,
+            "tensor_bytes": 174172160
+          },
+          "logits": {
+            "file_bytes": 9727142,
+            "files": 2,
+            "tensor_bytes": 9723904
+          },
+          "merger_hidden": {
+            "file_bytes": 21311220,
+            "files": 8,
+            "tensor_bytes": 21299200
+          },
+          "token_ids": {
+            "file_bytes": 5303,
+            "files": 1,
+            "tensor_bytes": 3728
+          },
+          "vision_embedding": {
+            "file_bytes": 8195005,
+            "files": 2,
+            "tensor_bytes": 8192000
+          },
+          "vision_hidden": {
+            "file_bytes": 157358520,
+            "files": 48,
+            "tensor_bytes": 157286400
+          }
+        },
+        "file_bytes": 423801468,
+        "tensor_bytes": 423471248,
+        "tensor_files": 206
+      },
+      "visual_tokens": 400
+    }
+  ],
+  "completed_cases": 1,
+  "estimate_note": "Linear estimate only; actual prompt/output lengths change attention size.",
+  "full_ten_case_linear_estimate_gib": 3.9469587430357933,
+  "intended_cases": 10,
+  "status": "partial",
+  "tensor_file_bytes": 423801468,
+  "tensor_file_mib": 404.16857528686523,
+  "total_result_bytes_before_report": 424354223
+}

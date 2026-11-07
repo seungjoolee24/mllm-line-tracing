@@ -10,7 +10,7 @@
 
 - 모델: `Qwen/Qwen3-VL-4B-Instruct`, revision은 [config.json](config.json)에 고정.
 - Transformers 4.57.1, Torch 2.8.0, T4, FP16, eager attention, batch 1.
-- greedy 자유 생성, 최대 64 token. 원 checkpoint 설정과 실제 생성 설정을 각각 저장.
+- greedy 자유 생성, 최대 64 token. `use_model_defaults=False`와 명시적 생성 인자로 checkpoint의 sampling 기본값 상속을 차단하고 실효 generation mode를 검증한다. 원 checkpoint 설정과 실제 생성 설정을 각각 저장.
 - 같은 답을 causal replay하여 수집하며 정답을 강제로 입력하는 조건과 구분.
 - 첫 답 token의 predictor는 마지막 prompt 위치. 실제 생성과 replay의 token별 argmax 정렬을 검증.
 
@@ -38,7 +38,7 @@ Hidden state는 norm 같은 요약값으로 대체하지 않고 원본 벡터를
 ## 결과 폴더
 
 ```text
-results/run001/
+results/run002/
   run_config.json
   environment.json
   model_config.json
@@ -57,7 +57,7 @@ results/run001/
 
 각 tensor의 shape·dtype·SHA256·파일 크기를 색인한다. 활성값은 FP16이고 logits·일부 요약은 FP32이며 token ID는 정수다. layer별로 CPU로 옮겨 즉시 저장하므로 전체 attention 행렬을 GPU에 계속 쌓지 않는다.
 
-Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 ZIP을 다운로드한다. 재개할 때는 같은 `results/run001`을 유지하거나 ZIP을 동일 위치에 복원한다. 완료 문제는 설정 hash와 각 tensor의 hash·shape·dtype를 검사한 뒤 건너뛴다.
+Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 ZIP을 다운로드한다. 재개할 때는 같은 `results/run002`을 유지하거나 ZIP을 동일 위치에 복원한다. 완료 문제는 설정 hash와 각 tensor의 hash·shape·dtype를 검사한 뒤 건너뛴다.
 
 ## 재개
 
@@ -66,3 +66,7 @@ Colab 런타임 파일은 임시이므로 첫 수집 후 notebook에서 결과 Z
 ## 검증
 
 `test_collect.py`는 사전학습 가중치를 다운로드하지 않고 작은 임의 초기화 Qwen3VL 모델을 사용한다. Hook 전후 logits 불변성, attention 행·열 추출, DeepStack 전후 snapshot, 생성 predictor 위치, CPU 파일 저장과 hook 정리를 검사한다. 실제 4B T4 실행 결과는 `results`의 실행 기록으로 별도 확인한다.
+
+## 실행 기록
+
+[초기 저장 용량 확인 결과](results/README.md)는 sampling 기본값 상속 오류가 확인되어 greedy baseline에서 제외한다. 프로토콜 1.1의 재수집은 results/run002를 사용한다. 노트북은 subprocess 출력을 화면과 collection.log에 함께 기록해 실제 실패 원인을 보존한다.

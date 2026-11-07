@@ -1,0 +1,126 @@
+{
+  "environment": {
+    "cuda": "12.6",
+    "gpu": "Tesla T4",
+    "python": "3.13.16",
+    "torch": "2.8.0+cu126",
+    "transformers": "4.57.1"
+  },
+  "github_metadata": {
+    "contains_archive": false,
+    "contains_raw_tensors": false,
+    "files": [
+      {
+        "bytes": 576,
+        "kind": "metadata",
+        "path": "run_config.json",
+        "sha256": "e4e0fcb8ebd87bfd2d3e296ec51b59ebbdbfbcbce11cdfffc2d79b0752bf5eab"
+      },
+      {
+        "bytes": 196,
+        "kind": "metadata",
+        "path": "environment.json",
+        "sha256": "a3b7c205014ccc560c8c0a30ed2ebe759b7540825fd2dceced6a665861c8fd18"
+      },
+      {
+        "bytes": 105,
+        "kind": "metadata",
+        "path": "notebook_provenance.json",
+        "sha256": "38475588427fb9e21268c194ed6c37880b56b3c9dcacd7cb4c06c9d49ffebef3"
+      },
+      {
+        "bytes": 6144,
+        "kind": "metadata",
+        "path": "model_config.json",
+        "sha256": "32db1853857b22a54fa28afeb8ba76baaa4632d2500b0f756d75810ee85ccf19"
+      },
+      {
+        "bytes": 1882,
+        "kind": "metadata",
+        "path": "generation_config.json",
+        "sha256": "90cf16fca8a23f3733877a0ddf1382560e9d0895965af35f6d3a2d61c2e5796e"
+      },
+      {
+        "bytes": 1881,
+        "kind": "metadata",
+        "path": "greedy_generation_config.json",
+        "sha256": "1e94cd9df946c27f41c8d403ab66ebe58f1783b03843ee466bcac01f19a504d5"
+      },
+      {
+        "bytes": 2503,
+        "kind": "metadata",
+        "path": "run_summary.json",
+        "sha256": "d4a7fda0c821d58c26ed84e585b45f0217d35a2e41130e7dbfc702dfecef38d4"
+      },
+      {
+        "bytes": 3479,
+        "kind": "metadata",
+        "path": "size_report.json",
+        "sha256": "4212e58da763270bf0571ee17c3eee4bcdef998698d07fe7d3abd80a5926cc48"
+      },
+      {
+        "bytes": 163760,
+        "kind": "metadata",
+        "path": "samples/case_00_curve/meta.json",
+        "sha256": "09558d356b010d2e49a990a4891be88a55540fb8dc76538680a100bd46bc7009"
+      },
+      {
+        "bytes": 375582,
+        "kind": "metadata",
+        "path": "samples/case_00_curve/token_geometry.json",
+        "sha256": "2b5c6083bfa66ea3060e2aee570f62a4ba037ef17225c13805dab7738e23af40"
+      }
+    ],
+    "total_bytes": 556108
+  },
+  "provenance": {
+    "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+    "model_revision": "70c41a926abfc92501c4a4da369a8d6312915b61",
+    "notebook": "activation_pilot.ipynb",
+    "run_config_sha256": "7231876e67480faef791464c8884aa467e37b4848fb78071aad37730afd79b53",
+    "source_commit": "5ff350978862814efdf16aad46b2a9f8c0b4ae45"
+  },
+  "raw_archive": {
+    "bytes": 369354665,
+    "download_url": null,
+    "external_upload_status": "pending",
+    "filename": "run001.zip",
+    "sha256": "e27bc7310799feeab901d12bbe240f9990bcdcaff65fec96e55dd8d6492c4616"
+  },
+  "raw_tensor_artifact": {
+    "external_url": null,
+    "storage_status": "Saved and verified locally; external upload pending.",
+    "tensor_file_bytes": 423801468,
+    "tensor_file_mib": 404.16857528686523,
+    "tensor_files": 206
+  },
+  "schema_version": "1.0",
+  "scope": {
+    "case_ids": [
+      "case_00_curve"
+    ],
+    "completed_cases": 1,
+    "continuation_status": "Additional cases are under failure diagnosis; not included in this snapshot.",
+    "intended_cases": 10,
+    "status": "partial",
+    "ten_case_experiment_complete": false
+  },
+  "snapshot_id": "pilot_run001",
+  "snapshot_policy": "Immutable first-case pilot snapshot. Do not overwrite with later continuation results.",
+  "verification": {
+    "checks": [
+      "file SHA-256",
+      "tensor shapes",
+      "tensor dtypes",
+      "complete layer inventory",
+      "generation/replay argmax alignment"
+    ],
+    "status": "passed",
+    "tensor_files_verified": 206,
+    "verification_scope": "Local first-case artifact verification; does not certify completion of remaining nine cases."
+  },
+  "scientific_status": "superseded_due_to_generation_default_inheritance",
+  "intended_generation_mode": "greedy_search",
+  "effective_generation_issue": "Transformers 4.57.1 inherited checkpoint do_sample=True because use_model_defaults was not disabled. Saved requested generation config does not establish effective greedy decoding.",
+  "usage": "Storage and hook plumbing pilot only; exclude from greedy baseline. All tensors passed integrity verification."
+}

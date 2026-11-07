@@ -21,5 +21,8 @@
     "activation_storage_dtype": "float16",
     "logits_storage_dtype": "float32",
     "snapshot_device": "cpu"
-  }
+  },
+  "protocol_version": "1.1",
+  "use_model_defaults": false,
+  "generation_mode": "greedy_search"
 }

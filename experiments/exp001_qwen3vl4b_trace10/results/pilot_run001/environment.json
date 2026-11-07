@@ -1,0 +1,9 @@
+{
+  "cuda": "12.6",
+  "gpu": "Tesla T4",
+  "gpu_total_bytes": 15637086208,
+  "initial_free_disk_bytes": 113774637056,
+  "python": "3.13.16",
+  "torch": "2.8.0+cu126",
+  "transformers": "4.57.1"
+}

@@ -74,6 +74,15 @@ def tiny_inputs():
     }
 
 
+def checkpoint_sampling_defaults(model):
+    """Reproduce the released checkpoint's post-4.50 sampling-default behavior."""
+    model.generation_config.transformers_version = "4.56.0"
+    model.generation_config.do_sample = True
+    model.generation_config.temperature = 0.7
+    model.generation_config.top_p = 0.8
+    model.generation_config.top_k = 20
+
+
 class TokenLayoutTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -91,10 +100,8 @@ class TokenLayoutTests(unittest.TestCase):
 
     def test_greedy_config_removes_checkpoint_sampling_and_repetition_processors(self):
         model = tiny_model()
+        checkpoint_sampling_defaults(model)
         model.generation_config.repetition_penalty = 1.2
-        model.generation_config.temperature = 0.7
-        model.generation_config.top_p = 0.8
-        model.generation_config.do_sample = True
         config = self.collect.greedy_generation_config(model, max_new_tokens=3)
         self.assertFalse(config.do_sample)
         self.assertEqual(config.num_beams, 1)
@@ -104,8 +111,50 @@ class TokenLayoutTests(unittest.TestCase):
         self.assertEqual(config.eos_token_id, model.generation_config.eos_token_id)
         self.assertEqual(model.generation_config.repetition_penalty, 1.2)
 
+    def test_effective_greedy_config_cannot_inherit_checkpoint_sampling_defaults(self):
+        model = tiny_model()
+        checkpoint_sampling_defaults(model)
+        requested = self.collect.greedy_generation_config(model, max_new_tokens=3)
+        self.assertFalse(requested.do_sample)
+        # Negative control: Transformers 4.57.1 treats a False equal to its global
+        # default as eligible for replacement from a >=4.50 checkpoint config.
+        inherited, _ = model._prepare_generation_config(requested)
+        self.assertTrue(inherited.do_sample)
+        self.assertEqual(inherited.temperature, 0.7)
+        self.assertEqual(inherited.top_p, 0.8)
+        self.assertEqual(inherited.top_k, 20)
+        effective, _ = model._prepare_generation_config(
+            requested, use_model_defaults=False, do_sample=False,
+        )
+        self.assertFalse(effective.do_sample)
+        self.assertEqual(effective.temperature, 1.0)
+        self.assertEqual(effective.top_p, 1.0)
+        self.assertEqual(effective.top_k, 50)
+        self.assertEqual(effective.num_beams, 1)
+        resolved = self.collect.resolve_greedy_generation_config(model, 3)
+        for key in ("do_sample", "temperature", "top_p", "top_k", "num_beams", "repetition_penalty"):
+            self.assertEqual(getattr(resolved, key), getattr(effective, key))
+        self.assertTrue(resolved.output_logits)
+        self.assertTrue(resolved.return_dict_in_generate)
+        inputs = tiny_inputs()
+        inputs["input_ids"] = inputs["input_ids"][:, :len(PROMPT)]
+        inputs["attention_mask"] = inputs["attention_mask"][:, :len(PROMPT)]
+        inputs.pop("use_cache")
+        with torch.inference_mode():
+            generated = model.generate(
+                **inputs, generation_config=requested,
+                use_model_defaults=False, do_sample=False,
+                return_dict_in_generate=True, output_logits=True,
+            )
+        emitted = generated.sequences[0, len(PROMPT):].tolist()
+        self.assertEqual(len(emitted), len(generated.logits))
+        self.assertTrue(emitted)
+        for step, token_id in enumerate(emitted):
+            self.assertEqual(int(generated.logits[step][0].argmax()), token_id)
+
     def test_cached_generation_and_causal_replay_predictor_alignment(self):
         model = tiny_model()
+        checkpoint_sampling_defaults(model)
         inputs = tiny_inputs()
         inputs["input_ids"] = inputs["input_ids"][:, :len(PROMPT)]
         inputs["attention_mask"] = inputs["attention_mask"][:, :len(PROMPT)]
@@ -113,6 +162,7 @@ class TokenLayoutTests(unittest.TestCase):
         with torch.inference_mode():
             generated = model.generate(
                 **inputs, generation_config=self.collect.greedy_generation_config(model, 3),
+                use_model_defaults=False, do_sample=False,
                 return_dict_in_generate=True, output_scores=True,
             )
             replay_inputs = dict(inputs)
@@ -332,6 +382,7 @@ class PipelineTests(unittest.TestCase):
     def test_collect_one_end_to_end_on_tiny_model_with_mocked_processor_and_gpu_stats(self):
         collect = load_collector()
         model = tiny_model()
+        checkpoint_sampling_defaults(model)
         class Tokenizer:
             all_special_ids = [1, 2, 59, 60, 61, 62]
             def encode(self, text, add_special_tokens=False):
@@ -367,6 +418,16 @@ class PipelineTests(unittest.TestCase):
                     {"gpu": "mocked for CPU integration only"}, max_new_tokens=3,
                 )
             self.assertEqual(result["status"], "complete")
+            self.assertEqual(result["schema_version"], "1.1")
+            self.assertFalse(result["generation"]["do_sample"])
+            self.assertFalse(result["generation"]["use_model_defaults"])
+            effective = result["generation"]["effective_generation_config"]
+            self.assertFalse(effective["do_sample"])
+            self.assertEqual(effective["temperature"], 1.0)
+            self.assertEqual(effective["top_p"], 1.0)
+            self.assertEqual(effective["top_k"], 50)
+            self.assertEqual(effective["num_beams"], 1)
+            self.assertEqual(effective["repetition_penalty"], 1.0)
             self.assertTrue(result["alignment"]["replay_matches_generation_argmax"])
             self.assertTrue(result["alignment"]["generation_raw_argmax_matches_emitted"])
             self.assertEqual(result["storage"]["tensor_files"], 26)

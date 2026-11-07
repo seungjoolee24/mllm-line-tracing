@@ -20,7 +20,7 @@ import sys
 import time
 
 
-SCHEMA_VERSION = "1.0"
+SCHEMA_VERSION = "1.1"
 TRANSFORMERS_VERSION = "4.57.1"
 COLORS = ("red", "orange", "yellow", "green", "blue", "purple", "pink", "brown")
 
@@ -311,6 +311,26 @@ def greedy_generation_config(model, max_new_tokens):
     )
 
 
+def resolve_greedy_generation_config(model, max_new_tokens):
+    """Resolve the exact configuration used at the generate entry point.
+
+    Transformers 4.57.1 can replace a supplied GenerationConfig's globally
+    default values with checkpoint defaults when use_model_defaults is None.
+    Explicit kwargs and use_model_defaults=False prevent that fallback.
+    """
+    requested = greedy_generation_config(model, max_new_tokens)
+    effective, _ = model._prepare_generation_config(
+        requested, use_model_defaults=False, do_sample=False, num_beams=1,
+        repetition_penalty=1.0, return_dict_in_generate=True, output_logits=True,
+        output_attentions=False, output_hidden_states=False,
+    )
+    if effective.do_sample is not False or effective.num_beams != 1 or effective.repetition_penalty != 1.0:
+        raise RuntimeError("effective generation settings are not unmodified greedy decoding")
+    if effective.get_generation_mode().value != "greedy_search":
+        raise RuntimeError(f"unexpected effective generation mode: {effective.get_generation_mode()}")
+    return effective
+
+
 def verify_completed_sample(directory, config_hash, check_shapes=True):
     """Validate resume artifacts, not just existence of a completion marker."""
     directory = Path(directory)
@@ -412,8 +432,11 @@ def collect_one(model, processor, dataset, sample, directory, config_hash, envir
     inputs = inputs.to(model.device)
     torch.cuda.reset_peak_memory_stats()
     model.model.rope_deltas = None
+    effective_generation = resolve_greedy_generation_config(model, max_new_tokens)
     with torch.inference_mode():
-        generated = model.generate(**inputs, generation_config=greedy_generation_config(model, max_new_tokens),
+        generated = model.generate(**inputs, generation_config=effective_generation,
+                                   use_model_defaults=False, do_sample=False, num_beams=1,
+                                   repetition_penalty=1.0,
                                    return_dict_in_generate=True,
                                    output_logits=True, output_attentions=False, output_hidden_states=False)
     full_ids = generated.sequences.detach()
@@ -479,7 +502,12 @@ def collect_one(model, processor, dataset, sample, directory, config_hash, envir
         "layout": layout,
         "generation": {"raw_answer": raw_answer, "token_ids": generated_ids,
                        "token_details": describe_generated_tokens(processor.tokenizer, generated_ids, len(prompt_ids)),
-                       "max_new_tokens": max_new_tokens, "do_sample": False,
+                       "max_new_tokens": effective_generation.max_new_tokens,
+                       "do_sample": effective_generation.do_sample,
+                       "num_beams": effective_generation.num_beams,
+                       "repetition_penalty": effective_generation.repetition_penalty,
+                       "use_model_defaults": False,
+                       "effective_generation_config": effective_generation.to_dict(),
                        "hit_token_limit": len(generated_ids) >= max_new_tokens},
         "score": score_answer(raw_answer, sample["answer_colors"]), "alignment": alignment,
         "capture_spec": {"vision_layers": len(model.model.visual.blocks),
@@ -534,9 +562,28 @@ def main(argv=None):
     dataset, samples, annotations_hash = _read_dataset(args.dataset)
     output = Path(args.output).resolve()
     environment = preflight(output, args.require_t4)
+    import torch
+    from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
+    torch.manual_seed(0)
+    torch.cuda.manual_seed_all(0)
+    # Resolve with the actual loaded checkpoint BEFORE hashing/publishing a run
+    # configuration. Schema 1.1 therefore cannot resume a 1.0 requested-only run.
+    processor = AutoProcessor.from_pretrained(args.model_id, revision=args.model_revision)
+    model = Qwen3VLForConditionalGeneration.from_pretrained(
+        args.model_id, revision=args.model_revision, dtype=torch.float16,
+        attn_implementation="eager", device_map={"": "cuda:0"}, low_cpu_mem_usage=True,
+    ).eval()
+    if model.config.vision_config.depth != 24 or model.config.text_config.num_hidden_layers != 36:
+        raise RuntimeError("unexpected architecture for the pinned 4B baseline")
+    effective_generation = resolve_greedy_generation_config(model, args.max_new_tokens)
     run_config = {"schema_version": SCHEMA_VERSION, "model_id": args.model_id,
                   "model_revision": args.model_revision, "transformers": TRANSFORMERS_VERSION,
-                  "dtype": "torch.float16", "attention_backend": "eager", "do_sample": False,
+                  "dtype": "torch.float16", "attention_backend": "eager",
+                  "do_sample": effective_generation.do_sample,
+                  "num_beams": effective_generation.num_beams,
+                  "repetition_penalty": effective_generation.repetition_penalty,
+                  "use_model_defaults": False,
+                  "effective_generation_config": effective_generation.to_dict(),
                   "max_new_tokens": args.max_new_tokens, "annotations_sha256": annotations_hash,
                   "collector_sha256": sha256_file(__file__), "intended_dataset_count": len(samples)}
     config_hash = hashlib.sha256(json.dumps(run_config, sort_keys=True).encode()).hexdigest()
@@ -558,11 +605,6 @@ def main(argv=None):
             completed.append(verify_completed_sample(target, config_hash))
         else:
             to_run.append(sample)
-    import torch
-    from transformers import AutoProcessor, Qwen3VLForConditionalGeneration
-    torch.manual_seed(0)
-    torch.cuda.manual_seed_all(0)
-    model = None
     failures = []
     write_json(output / "run_summary.json", {
         "status": "running", "intended_cases": len(samples),
@@ -570,16 +612,9 @@ def main(argv=None):
         "completed_cases": len(completed),
     })
     if to_run:
-        processor = AutoProcessor.from_pretrained(args.model_id, revision=args.model_revision)
-        model = Qwen3VLForConditionalGeneration.from_pretrained(
-            args.model_id, revision=args.model_revision, dtype=torch.float16,
-            attn_implementation="eager", device_map={"": "cuda:0"}, low_cpu_mem_usage=True,
-        ).eval()
-        if model.config.vision_config.depth != 24 or model.config.text_config.num_hidden_layers != 36:
-            raise RuntimeError("unexpected architecture for the pinned 4B baseline")
         write_json(output / "model_config.json", model.config.to_dict())
         write_json(output / "generation_config.json", model.generation_config.to_dict())
-        write_json(output / "greedy_generation_config.json", greedy_generation_config(model, args.max_new_tokens).to_dict())
+        write_json(output / "greedy_generation_config.json", effective_generation.to_dict())
         for index, sample in enumerate(to_run):
             print(f"Collecting {sample['id']} ({index + 1}/{len(to_run)})", flush=True)
             parent = output / "samples"
